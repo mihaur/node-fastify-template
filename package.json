@@ -1,0 +1,53 @@
+{
+  "name": "node-fastify-template",
+  "version": "1.0.0",
+  "description": "Node.js fastify HTTP server with GitHub Actions build, tooling, and tests. Can be used as a template to bootstrap your Node.js server projects.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon --require esm ./src/server.js | pino-pretty -t",
+    "debug": "node --require esm --inspect-brk ./src/server.js | pino-pretty -t",
+    "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
+    "lint:fix": "standard --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
+    "unit": "tap test/*.test.js",
+    "coverage": "npm run unit -- --coverage --coverage-report=html",
+    "coverage:ci": "npm run unit -- --coverage --coverage-report=text --coverage-report=lcovonly",
+    "test": "npm run lint && npm run unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihaur/node-fastify-template.git"
+  },
+  "keywords": [],
+  "author": "Miha Urbanija <miha.urbanija@gmail.com>",
+  "license": "Apache-2.0 WITH LLVM Exception",
+  "bugs": {
+    "url": "https://github.com/mihaur/node-fastify-template/issues"
+  },
+  "homepage": "https://github.com/mihaur/node-fastify-template#readme",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "nodemon": "^2.0.4",
+    "pino-pretty": "^4.0.0",
+    "pre-commit": "^1.2.2",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.3",
+    "tap": "^14.10.7"
+  },
+  "dependencies": {
+    "fastify": "^2.14.0",
+    "fastify-env": "^1.0.1",
+    "fastify-mongodb": "^2.0.0",
+    "fastify-plugin": "^1.6.1"
+  },
+  "nodemonConfig": {
+    "verbose": false,
+    "watch": [
+      ".",
+      ".env"
+    ],
+    "ignore": [
+      "*.test.js"
+    ],
+    "delay": "2500"
+  }
+}
