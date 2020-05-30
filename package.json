@@ -11,7 +11,8 @@
     "unit": "tap test/*.test.js",
     "coverage": "npm run unit -- --coverage --coverage-report=html",
     "coverage:ci": "npm run unit -- --coverage --coverage-report=text --coverage-report=lcovonly",
-    "test": "npm run lint && npm run unit"
+    "test": "npm run lint && npm run unit",
+    "license-checker": "license-checker --production --onlyAllow='Apache-2.0;Apache-2.0 WITH LLVM-exception;MIT;ISC;BSD-3-Clause;BSD-2-Clause'"
   },
   "repository": {
     "type": "git",
@@ -19,18 +20,19 @@
   },
   "keywords": [],
   "author": "Miha Urbanija <miha.urbanija@gmail.com>",
-  "license": "Apache-2.0 WITH LLVM Exception",
+  "license": "Apache-2.0 WITH LLVM-exception",
   "bugs": {
     "url": "https://github.com/mihaur/node-fastify-template/issues"
   },
   "homepage": "https://github.com/mihaur/node-fastify-template#readme",
   "devDependencies": {
     "esm": "^3.2.25",
-    "nodemon": "^2.0.4",
+    "license-checker": "^25.0.0",
+    "nodemon": "^2.0.0",
     "pino-pretty": "^4.0.0",
     "pre-commit": "^1.2.2",
     "snazzy": "^8.0.0",
-    "standard": "^14.3.3",
+    "standard": "*",
     "tap": "^14.10.7"
   },
   "dependencies": {
