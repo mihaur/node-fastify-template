@@ -9,16 +9,16 @@ import fastifyMongodb from 'fastify-mongodb'
 import { logAccess } from './utils/utils.js'
 
 const envOptions = {
-  dotenv: true, // or { debug: true },
+  dotenv: true, // { debug: true },
   schema: {
     type: 'object',
-    required: ['MONGOURI'],
+    required: ['MONGODB_URI'],
     properties: {
       PORT: {
         type: 'string',
         default: 3000
       },
-      MONGOURI: {
+      MONGODB_URI: {
         type: 'string',
         default: ''
       }
@@ -33,19 +33,19 @@ function buildFastify (options = {}) {
   //
   fastify.register(fp(async (fastify, opts) => {
     fastify.register(fastifyMongodb, {
-      url: fastify.config.MONGOURI
+      url: fastify.config.MONGODB_URI
     })
   }))
 
-  fastify.get('/ping/:response', function (request, reply) {
+  fastify.get('/ping/:response', async function (request, reply) {
     const response = { ping: request.params.response }
-    logAccess(response, fastify.mongo.db.collection('access-log'))
+    await logAccess(response, fastify.mongo.db.collection('access-log'))
     reply.send(response)
   })
 
   fastify.get('/ping', async function (request, reply) {
     const response = { ping: 'pong' }
-    logAccess(response, fastify.mongo.db.collection('access-log'))
+    await logAccess(response, fastify.mongo.db.collection('access-log'))
     reply.send(response)
   })
 
