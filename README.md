@@ -16,6 +16,7 @@ Node.js server/API build with [fastify][fastify-url]. GitHub Actions build, esm,
 * unit and integration tests with coverage using [tap][tap-url]
 * continuous integration using [Github Actions CI][github-actions-url]
 * code coverage tracking using [coveralls][coveralls-url]
+* automated dependency updates using [dependabot][dependabot-url]
 
 ## Getting Started
 
@@ -60,6 +61,7 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [coveralls-url]: https://coveralls.io/
 [coveralls-repo-url]: https://coveralls.io/github/mihaur/node-fastify-template?branch=master
 [coveralls-badge-url]: https://coveralls.io/repos/github/mihaur/node-fastify-template/badge.svg?branch=master
+[dependabot-url]: https://dependabot.com/
 [dotenv-url]: https://github.com/motdotla/dotenv
 [esm-url]: https://github.com/standard-things/esm
 [fastify-url]: https://github.com/fastify/fastify
@@ -67,8 +69,6 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
 [github-actions-url]: https://github.com/features/actions
-[greenkeeper-image]: https://badges.greenkeeper.io/mihaur/node-server-template.svg
-[greenkeeper-url]: https://greenkeeper.io/
 [jsdoc-url]: https://devdocs.io/
 [tap-url]: https://node-tap.org/
 [node-doc-url]: https://nodejs.org/en/docs/guides/debugging-getting-started/
