@@ -34,17 +34,21 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: setup MongoDB in docker
-      uses: DigiPie/mongo-action@v1.0.0
-      with:
-        image_version: latest
-        port: 27017
+    - name: Lint Code Base
+      uses: docker://github/super-linter:v2.1.0
+      env:
+        VALIDATE_ALL_CODEBASE: true
     - name: npm install
       run: |
         npm install
     - name: Check licenses
       run: |
         npm run license-checker
+    - name: setup MongoDB in docker
+      uses: DigiPie/mongo-action@v1.0.0
+      with:
+        image_version: latest
+        port: 27017
     - name: npm test
       run: |
         npm run coverage:ci
