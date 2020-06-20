@@ -1,11 +1,11 @@
-# Node.js API fastify server template
+# Node.js API server based on fastify/MongoDB project template
 
 [![js-standard-style][standard-image]][standard-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
 ![GitHub Actions CI][github-action-nodejs-ci-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 
-Node.js server/API build with [fastify][fastify-url]. GitHub Actions build, esm, minimal tooling (nodemon, standard), and tap tests. Can be used as a template to quickly bootstrap yor Node.js server/API project.
+Node.js API server/backend build with [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build, esm, minimal tooling (nodemon, standard), and tap tests. Can be used as a template to quickly bootstrap yor Node.js API server project.
 
 ## All features
 * automatic reloading using [nodemon][nodemon-url]
@@ -65,6 +65,7 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [dotenv-url]: https://github.com/motdotla/dotenv
 [esm-url]: https://github.com/standard-things/esm
 [fastify-url]: https://github.com/fastify/fastify
+[fastify-site-url]: fastify.io/
 [fastify-env-url]: https://github.com/fastify/fastify-env
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
@@ -75,6 +76,7 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [node-url]: https://nodejs.org/en/
 [nodemon-url]: https://nodemon.io/
 [npm-url]: https://www.npmjs.com/
+[mongodb-uri]: https://www.mongodb.com/
 [snazzy-url]: https://github.com/standard/snazzy
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standard-url]: http://standardjs.com/
