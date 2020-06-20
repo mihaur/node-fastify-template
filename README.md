@@ -45,7 +45,7 @@ Linting is done using [standard][standard-url]. Use `npm run lint` to run linter
 
 ### Tests
 
-Tests are run by [tap][tap-url]. Run `npm run test` to run both unit and integration tests. 
+Tests are run by [tap][tap-url]. Run `npm run test` to run both unit and integration tests.
 
 #### Unit tests
 Unit tests are stored in src/**.spec.js.
