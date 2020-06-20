@@ -1,7 +1,7 @@
 {
   "name": "node-fastify-template",
   "version": "1.0.0",
-  "description": "Node.js fastify HTTP server with GitHub Actions build, tooling, and tests. Can be used as a template to bootstrap your Node.js server projects.",
+  "description": "Node.js API server based on fastify/MongoDB project template.",
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon --require esm ./src/server.js | pino-pretty -t",
@@ -18,7 +18,18 @@
     "type": "git",
     "url": "git+https://github.com/mihaur/node-fastify-template.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "nodejs",
+    "API",
+    "backend",
+    "server",
+    "fastify",
+    "mongo",
+    "mongodb",
+    "template",
+    "boilerplate"
+  ],
   "author": "Miha Urbanija <miha.urbanija@gmail.com>",
   "license": "Apache-2.0 WITH LLVM-exception",
   "bugs": {
