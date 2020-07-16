@@ -17,6 +17,7 @@ Node.js API server/backend build with [fastify][fastify-site-url] and [MongoDB][
 * continuous integration using [Github Actions CI][github-actions-url]
 * code coverage tracking using [coveralls][coveralls-url]
 * automated dependency updates using [dependabot][dependabot-url]
+* automated authoring of release notes using [release drafter][release-drafter-uri]
 
 ## Getting Started
 
@@ -71,13 +72,14 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
 [github-actions-url]: https://github.com/features/actions
 [jsdoc-url]: https://devdocs.io/
-[tap-url]: https://node-tap.org/
+[mongodb-uri]: https://www.mongodb.com/
 [node-doc-url]: https://nodejs.org/en/docs/guides/debugging-getting-started/
 [node-url]: https://nodejs.org/en/
 [nodemon-url]: https://nodemon.io/
 [npm-url]: https://www.npmjs.com/
-[mongodb-uri]: https://www.mongodb.com/
+[pre-commit-url]: https://github.com/observing/pre-commit
+[release-drafter-url]: https://github.com/release-drafter/release-drafter
 [snazzy-url]: https://github.com/standard/snazzy
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standard-url]: http://standardjs.com/
-[pre-commit-url]: https://github.com/observing/pre-commit
+[tap-url]: https://node-tap.org/
