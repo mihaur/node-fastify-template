@@ -3,15 +3,24 @@ tag-template: 'v$RESOLVED_VERSION'
 categories:
   - title: '🚀 Features'
     labels:
+      - 'feat'
       - 'feature'
       - 'enhancement'
+      - ':sparkles:'
   - title: '🐛 Bug Fixes'
     labels:
       - 'fix'
       - 'bugfix'
       - 'bug'
+      - ':bug:'
   - title: '🧰 Maintenance'
-    label: 'chore'
+    labels: 
+      - 'chore'
+      - ':wrench:'
+  - title: '📚 Docs'
+    labels: 
+      - 'docs'
+      - ':books:'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 version-resolver:
   major:
