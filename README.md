@@ -17,7 +17,7 @@ Node.js API server/backend build with [fastify][fastify-site-url] and [MongoDB][
 * continuous integration using [Github Actions CI][github-actions-url]
 * code coverage tracking using [coveralls][coveralls-url]
 * automated dependency updates using [dependabot][dependabot-url]
-* automated authoring of release notes using [release drafter][release-drafter-uri]
+* automated authoring of release notes using [release-drafter][release-drafter-url]
 
 ## Getting Started
 
