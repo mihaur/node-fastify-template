@@ -17,6 +17,8 @@ categories:
     labels: 
       - 'chore'
       - ':wrench:'
+      - 'build'
+      - ':package:'
   - title: '📚 Docs'
     labels: 
       - 'docs'
