@@ -6,23 +6,18 @@ categories:
       - 'feat'
       - 'feature'
       - 'enhancement'
-      - ':sparkles:'
   - title: '🐛 Bug Fixes'
     labels:
       - 'fix'
       - 'bugfix'
       - 'bug'
-      - ':bug:'
   - title: '🧰 Maintenance'
     labels: 
       - 'chore'
-      - ':wrench:'
       - 'build'
-      - ':package:'
   - title: '📚 Docs'
     labels: 
       - 'docs'
-      - ':books:'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 version-resolver:
   major:
@@ -36,6 +31,6 @@ version-resolver:
       - 'patch'
   default: patch
 template: |
-  ## Changes
+  ## What's Changed
 
   $CHANGES
