@@ -51,7 +51,7 @@
     "fastify": "3.6.0",
     "fastify-env": "^2.1.0",
     "fastify-mongodb": "^2.0.1",
-    "fastify-plugin": "^2.3.4"
+    "fastify-plugin": "^3.0.0"
   },
   "nodemonConfig": {
     "verbose": false,
