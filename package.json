@@ -43,7 +43,7 @@
     "nodemon": "^2.0.6",
     "pino-pretty": "^4.3.0",
     "pre-commit": "^1.2.2",
-    "snazzy": "^8.0.0",
+    "snazzy": "^9.0.0",
     "standard": "*",
     "tap": "^14.10.8"
   },
