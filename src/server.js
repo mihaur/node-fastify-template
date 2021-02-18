@@ -1,10 +1,10 @@
 'use strict'
 
-import app from './app'
+import app from './app.js'
 
 const start = async () => {
   try {
-    const fastify = app({ logger: true })
+    const fastify = await app({ logger: true })
     await fastify.ready()
     fastify.listen(fastify.config.PORT, (err, address) => {
       if (err) console.log(err)

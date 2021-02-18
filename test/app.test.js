@@ -1,8 +1,8 @@
 import { test } from 'tap'
-import app from '../src/app'
+import app from '../src/app.js'
 
 test('GET `/api/ping` route', async t => {
-  const fastify = app()
+  const fastify = await app()
   await fastify.ready()
 
   t.tearDown(fastify.close.bind(fastify))
@@ -19,7 +19,7 @@ test('GET `/api/ping` route', async t => {
 })
 
 test('GET `/api/ping?delay=1` route', async t => {
-  const fastify = app()
+  const fastify = await app()
   await fastify.ready()
 
   t.tearDown(fastify.close.bind(fastify))
@@ -36,7 +36,7 @@ test('GET `/api/ping?delay=1` route', async t => {
 })
 
 test('GET `/api/ping?delay=A` route', async t => {
-  const fastify = app()
+  const fastify = await app()
   await fastify.ready()
 
   t.tearDown(fastify.close.bind(fastify))
@@ -51,7 +51,7 @@ test('GET `/api/ping?delay=A` route', async t => {
 })
 
 test('GET `/api/ping/bang` route', async t => {
-  const fastify = app()
+  const fastify = await app()
   await fastify.ready()
 
   t.tearDown(fastify.close.bind(fastify))
@@ -68,7 +68,7 @@ test('GET `/api/ping/bang` route', async t => {
 })
 
 test('GET `/api/ping/bang?delay=1` route', async t => {
-  const fastify = app()
+  const fastify = await app()
   await fastify.ready()
 
   t.tearDown(fastify.close.bind(fastify))
