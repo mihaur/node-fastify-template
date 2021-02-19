@@ -12,8 +12,8 @@ Node.js API server/backend build with [fastify][fastify-site-url] and [MongoDB][
 * load .env to environment and validate using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
 * linting and fixing using [standard][standard-url]
 * git pre-commit hooks using [pre-commit][pre-commit-url]
-* ESM modules using [esm][esm-url]
-* unit and integration tests with coverage using [tap][tap-url]
+* integration tests with [tap][tap-url]
+* coverage report by [c8][c8-url] that leverages v8 coverage report
 * continuous integration using [Github Actions CI][github-actions-url]
 * code coverage tracking using [coveralls][coveralls-url]
 * automated dependency updates using [dependabot][dependabot-url]
@@ -44,17 +44,11 @@ Use .env to store your environment dependant configuration options and secrets. 
 
 Linting is done using [standard][standard-url]. Use `npm run lint` to run linter. Linter output is piped trough [snazzy][snazzy-url] which converts "compact" text from a linter to "stylish". You can also automatically fix linter errors by running `npm run lint:fix`.
 
-### Tests
+### Integration tests
 
-Tests are run by [tap][tap-url]. Run `npm run test` to run both unit and integration tests.
+Integration tests are stored in test/**.spec.js. Tests are run by [tap][tap-url]. Run `npm run test` to run both unit and integration tests.
 
-#### Unit tests
-Unit tests are stored in src/**.spec.js.
-
-#### Integration tests
-Integration tests are stored in test/**.spec.js.
-
-#### Coverage tests
+#### Coverage reports
 Run `npm run coverage` to generate HTML test coverage report. Browser is opened after tests are run.
 
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
@@ -62,9 +56,9 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [coveralls-url]: https://coveralls.io/
 [coveralls-repo-url]: https://coveralls.io/github/mihaur/node-fastify-template?branch=master
 [coveralls-badge-url]: https://coveralls.io/repos/github/mihaur/node-fastify-template/badge.svg?branch=master
+[c8-url]: https://github.com/bcoe/c8
 [dependabot-url]: https://dependabot.com/
 [dotenv-url]: https://github.com/motdotla/dotenv
-[esm-url]: https://github.com/standard-things/esm
 [fastify-url]: https://github.com/fastify/fastify
 [fastify-site-url]: fastify.io/
 [fastify-env-url]: https://github.com/fastify/fastify-env
