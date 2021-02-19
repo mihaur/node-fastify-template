@@ -51,6 +51,7 @@ jobs:
         port: 27017
     - name: Run tests
       run: |
+        npm run unit
         npm run coverage:ci
       env:
         CI: true
