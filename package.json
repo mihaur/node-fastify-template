@@ -3,9 +3,10 @@
   "version": "1.0.2",
   "description": "Node.js API server based on fastify/MongoDB project template.",
   "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon --require esm ./src/server.js | pino-pretty -t",
-    "debug": "node --require esm --inspect-brk ./src/server.js | pino-pretty -t",
+    "start": "nodemon ./src/server.js | pino-pretty -t",
+    "debug": "node --inspect-brk ./src/server.js | pino-pretty -t",
     "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
     "lint:fix": "standard --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
     "unit": "tap test/*.test.js",
@@ -38,7 +39,6 @@
   },
   "homepage": "https://github.com/mihaur/node-fastify-template#readme",
   "devDependencies": {
-    "esm": "^3.2.25",
     "license-checker": "^25.0.1",
     "nodemon": "^2.0.7",
     "pino-pretty": "^4.5.0",
