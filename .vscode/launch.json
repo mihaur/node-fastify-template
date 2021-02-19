@@ -4,7 +4,6 @@
         {
             "type": "node",
             "request": "launch",
-            "runtimeArgs": ["--require", "esm"],
             "name": "Launch Program",
             "skipFiles": [
                 "<node_internals>/**"
