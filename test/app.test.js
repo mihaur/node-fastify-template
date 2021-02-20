@@ -1,5 +1,3 @@
-'use strict'
-
 import tap from 'tap'
 import app from '../src/app.js'
 

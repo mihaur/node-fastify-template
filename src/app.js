@@ -1,5 +1,3 @@
-'use strict'
-
 import Fastify from 'fastify'
 
 import fastifyEnv from 'fastify-env'

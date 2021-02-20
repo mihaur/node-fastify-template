@@ -2,8 +2,12 @@
   "name": "node-fastify-template",
   "version": "1.0.3",
   "description": "Node.js API server based on fastify/MongoDB project template.",
-  "main": "src/server.js",
+  "main": "./src/server.js",
+  "exports": "./src/server.js",
   "type": "module",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "scripts": {
     "start": "nodemon ./src/server.js | pino-pretty -t",
     "debug": "node --inspect-brk ./src/server.js | pino-pretty -t",
