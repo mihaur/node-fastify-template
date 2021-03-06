@@ -35,9 +35,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: super-lint Code Base
-      uses: docker://github/super-linter:v3.15.2
+      uses: github/super-linter@v3
       env:
         VALIDATE_ALL_CODEBASE: false
+        DEFAULT_BRANCH: master
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: npm install
       run: |
         npm install
