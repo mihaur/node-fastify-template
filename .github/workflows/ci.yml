@@ -31,11 +31,11 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
     - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2.1.5
       with:
         node-version: ${{ matrix.node-version }}
     - name: super-lint Code Base
-      uses: docker://github/super-linter:v2.1.0
+      uses: docker://github/super-linter:v3.15.2
       env:
         VALIDATE_ALL_CODEBASE: false
     - name: npm install
@@ -45,7 +45,7 @@ jobs:
       run: |
         npm run license-checker
     - name: Start MongoDB in docker
-      uses: DigiPie/mongo-action@v1.0.0
+      uses: DigiPie/mongo-action@v1.0.1
       with:
         image_version: latest
         port: 27017
@@ -57,7 +57,7 @@ jobs:
         CI: true
         MONGODB_URI: mongodb://localhost:27017/test-db # use mongoDB docker
     - name: Coveralls Parallel
-      uses: coverallsapp/github-action@master
+      uses: coverallsapp/github-action@v1.1.2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         flag-name: run-${{ matrix.os }}-${{ matrix.node-version }}
@@ -68,7 +68,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Coveralls Finished
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@v1.1.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
+
