@@ -18,7 +18,8 @@
     "coverage:ci": "c8 report --reporter=text --reporter=lcovonly",
     "test": "npm run lint && npm run unit",
     "license-checker": "license-checker --production --onlyAllow='Apache-2.0;Apache-2.0 WITH LLVM-exception;MIT;ISC;BSD-3-Clause;BSD-2-Clause'",
-    "super-linter": "docker run -e RUN_LOCAL=true -v $PWD:/tmp/lint github/super-linter"
+    "super-linter": "docker run -e RUN_LOCAL=true -v $PWD:/tmp/lint github/super-linter",
+    "prepare": "husky install"
   },
   "repository": "github:mihaur/node-fastify-template",
   "keywords": [
@@ -37,10 +38,10 @@
   "license": "Apache-2.0 WITH LLVM-exception",
   "devDependencies": {
     "c8": "^7.6.0",
+    "husky": "^5.1.3",
     "license-checker": "^25.0.1",
     "nodemon": "^2.0.7",
     "pino-pretty": "^4.7.1",
-    "pre-commit": "^1.2.2",
     "snazzy": "^9.0.0",
     "standard": "*",
     "tap": "^14.11.0"
@@ -61,5 +62,10 @@
       "*.test.js"
     ],
     "delay": "2500"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   }
 }
