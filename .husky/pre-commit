@@ -2,6 +2,7 @@
 # Disable hooks in CI
 [ -n "$CI" ] && exit 0
 
+# shellcheck source=/github/workspace/.husky/_/husky.sh
 . "$(dirname "$0")/_/husky.sh"
 
 npm test
