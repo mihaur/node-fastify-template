@@ -62,10 +62,5 @@
       "*.test.js"
     ],
     "delay": "2500"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test"
-    }
   }
 }
