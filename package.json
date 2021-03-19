@@ -37,10 +37,10 @@
   "license": "Apache-2.0 WITH LLVM-exception",
   "devDependencies": {
     "c8": "^7.6.0",
+    "husky": "^5.1.3",
     "license-checker": "^25.0.1",
     "nodemon": "^2.0.7",
     "pino-pretty": "^4.7.1",
-    "pre-commit": "^1.2.2",
     "snazzy": "^9.0.0",
     "standard": "*",
     "tap": "^14.11.0"

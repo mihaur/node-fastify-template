@@ -11,7 +11,7 @@ Node.js API server/backend build with [fastify][fastify-site-url] and [MongoDB][
 * automatic reloading using [nodemon][nodemon-url]
 * load .env to environment and validate using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
 * linting and fixing using [standard][standard-url]
-* git pre-commit hooks using [pre-commit][pre-commit-url]
+* git pre-commit hooks using [husky][husky-url]
 * integration tests with [tap][tap-url]
 * coverage report by [c8][c8-url] that leverages v8 coverage report
 * continuous integration using [Github Actions CI][github-actions-url]
@@ -65,13 +65,13 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
 [github-actions-url]: https://github.com/features/actions
+[husky-url]: https://typicode.github.io/husky
 [jsdoc-url]: https://devdocs.io/
 [mongodb-uri]: https://www.mongodb.com/
 [node-doc-url]: https://nodejs.org/en/docs/guides/debugging-getting-started/
 [node-url]: https://nodejs.org/en/
 [nodemon-url]: https://nodemon.io/
 [npm-url]: https://www.npmjs.com/
-[pre-commit-url]: https://github.com/observing/pre-commit
 [release-drafter-url]: https://github.com/release-drafter/release-drafter
 [snazzy-url]: https://github.com/standard/snazzy
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
