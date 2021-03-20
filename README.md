@@ -3,6 +3,7 @@
 [![js-standard-style][standard-image]][standard-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
 ![GitHub Actions CI][github-action-nodejs-ci-url]
+![GitHub Actions CI][github-action-lint-code-base-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 
 Node.js API server/backend build with [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build, esm, minimal tooling (nodemon, standard), and tap tests. Can be used as a template to quickly bootstrap yor Node.js API server project.
@@ -64,6 +65,7 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [fastify-env-url]: https://github.com/fastify/fastify-env
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
+[github-action-lint-code-base-url]: https://github.com/mihaur/node-fastify-template/workflows/Lint%20Code%20Base/badge.svg
 [github-actions-url]: https://github.com/features/actions
 [husky-url]: https://typicode.github.io/husky
 [jsdoc-url]: https://devdocs.io/

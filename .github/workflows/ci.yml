@@ -1,12 +1,13 @@
+---
 name: Node.JS CI
 
 on: 
   push:
-    branches:
-    - master
+    paths-ignore:
+      - '*.md'
   pull_request:
-    branches:
-    - master
+    paths-ignore:
+      - '*.md'
     
 jobs:
   test:
@@ -34,12 +35,6 @@ jobs:
       uses: actions/setup-node@v2.1.5
       with:
         node-version: ${{ matrix.node-version }}
-    - name: super-lint Code Base
-      uses: github/super-linter@v3
-      env:
-        VALIDATE_ALL_CODEBASE: false
-        DEFAULT_BRANCH: master
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: npm install
       run: |
         npm install
