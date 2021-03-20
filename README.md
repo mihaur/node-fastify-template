@@ -1,4 +1,4 @@
-# Node.js API server based on fastify/MongoDB project template
+# Node.js API server based on fastify + MongoDB project template
 
 [![js-standard-style][standard-image]][standard-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
@@ -6,19 +6,22 @@
 ![GitHub Actions CI][github-action-lint-code-base-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 
-Node.js API server/backend build with [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build, esm, minimal tooling (nodemon, standard), and tap tests. Can be used as a template to quickly bootstrap yor Node.js API server project.
+Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling (nodemon, standard), and node-tap tests. Can be used as a template to quickly bootstrap yor Node.js API http server project.
 
 ## All features
 * automatic reloading using [nodemon][nodemon-url]
+* native [ESM][esm-url] module ([ECMAScript][ecma-script-url]) with imports/exports
 * load .env to environment and validate using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
 * linting and fixing using [standard][standard-url]
 * git pre-commit hooks using [husky][husky-url]
-* integration tests with [tap][tap-url]
-* coverage report by [c8][c8-url] that leverages v8 coverage report
+* integration tests with [node-tap][node-tap-url]
+* coverage report by [c8][c8-url] that leverages native v8 coverage report
 * continuous integration using [Github Actions CI][github-actions-url]
-* code coverage tracking using [coveralls][coveralls-url]
-* automated dependency updates using [dependabot][dependabot-url]
-* automated authoring of release notes using [release-drafter][release-drafter-url]
+  * code coverage tracking using [coveralls][coveralls-url]
+  * dependency updates notifications using [dependabot][dependabot-url]
+  * dependency merging using [Github Action Merge Dependabot][github-action-merge-dependabot]
+  * authoring of release notes using [release-drafter][release-drafter-url]
+  * code linting with [Super-Linter][super-litner-url]
 
 ## Getting Started
 
@@ -47,7 +50,7 @@ Linting is done using [standard][standard-url]. Use `npm run lint` to run linter
 
 ### Integration tests
 
-Integration tests are stored in test/**.spec.js. Tests are run by [tap][tap-url]. Run `npm run test` to run both unit and integration tests.
+Integration tests are stored in test/**.spec.js. Tests are run by [node-tap][node-tap-url]. Run `npm run test` to run both unit and integration tests.
 
 #### Coverage reports
 Run `npm run coverage` to generate HTML test coverage report. Browser is opened after tests are run.
@@ -60,10 +63,13 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [c8-url]: https://github.com/bcoe/c8
 [dependabot-url]: https://dependabot.com/
 [dotenv-url]: https://github.com/motdotla/dotenv
+[ecma-script-url]: https://tc39.es/ecma262/#sec-ecmascript-language-scripts-and-modules
+[esm-url]: https://nodejs.org/api/esm.html#esm_modules_ecmascript_modules
 [fastify-url]: https://github.com/fastify/fastify
 [fastify-site-url]: fastify.io/
 [fastify-env-url]: https://github.com/fastify/fastify-env
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+[github-action-merge-dependabot]: https://github.com/marketplace/actions/github-action-merge-dependabot
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
 [github-action-lint-code-base-url]: https://github.com/mihaur/node-fastify-template/workflows/Lint%20Code%20Base/badge.svg
 [github-actions-url]: https://github.com/features/actions
@@ -71,11 +77,12 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [jsdoc-url]: https://devdocs.io/
 [mongodb-uri]: https://www.mongodb.com/
 [node-doc-url]: https://nodejs.org/en/docs/guides/debugging-getting-started/
+[node-tap-url]: https://node-tap.org/
 [node-url]: https://nodejs.org/en/
 [nodemon-url]: https://nodemon.io/
 [npm-url]: https://www.npmjs.com/
-[release-drafter-url]: https://github.com/release-drafter/release-drafter
+[release-drafter-url]: https://github.com/marketplace/actions/release-drafter
 [snazzy-url]: https://github.com/standard/snazzy
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standard-url]: http://standardjs.com/
-[tap-url]: https://node-tap.org/
+[super-litner-url]: https://github.com/marketplace/actions/super-linter

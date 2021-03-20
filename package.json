@@ -31,7 +31,8 @@
     "mongo",
     "mongodb",
     "template",
-    "boilerplate"
+    "boilerplate",
+    "ESM"
   ],
   "author": "Miha Urbanija <miha.urbanija@gmail.com>",
   "license": "Apache-2.0 WITH LLVM-exception",
