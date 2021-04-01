@@ -1,7 +1,5 @@
-import tap from 'tap'
+import { test } from 'tap'
 import app from '../src/app.js'
-
-const { test } = tap
 
 test('GET `/api/ping` route', async t => {
   const fastify = await app()
