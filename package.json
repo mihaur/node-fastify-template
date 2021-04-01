@@ -44,7 +44,7 @@
     "pino-pretty": "^4.7.1",
     "snazzy": "^9.0.0",
     "standard": "*",
-    "tap": "^14.11.0"
+    "tap": "^15.0.1"
   },
   "dependencies": {
     "fastify": "^3.14.1",
