@@ -13,7 +13,7 @@
     "debug": "node --inspect-brk ./src/server.js | pino-pretty -t",
     "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
     "lint:fix": "standard --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
-    "unit": "c8 --check-coverage --lines 100 tap --no-esm --no-coverage test/*.test.js",
+    "unit": "c8 --check-coverage --lines 100 tap --no-coverage test/*.test.js",
     "coverage": "c8 report --reporter=html && npx http-server -o coverage/",
     "coverage:ci": "c8 report --reporter=text --reporter=lcovonly",
     "test": "npm run lint && npm run unit",
@@ -44,13 +44,12 @@
     "pino-pretty": "^4.7.1",
     "snazzy": "^9.0.0",
     "standard": "*",
-    "tap": "^14.11.0"
+    "tap": "^15.0.1"
   },
   "dependencies": {
     "fastify": "^3.14.1",
     "fastify-env": "^2.1.0",
-    "fastify-mongodb": "^2.0.1",
-    "fastify-plugin": "^3.0.0"
+    "fastify-mongodb": "^2.0.1"
   },
   "nodemonConfig": {
     "verbose": false,
