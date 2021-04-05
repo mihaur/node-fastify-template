@@ -1,11 +1,8 @@
 import { test } from 'tap'
-import app from '../src/app.js'
+import { buildFastify } from './helper.js'
 
 test('GET `/api/ping` route', async t => {
-  const fastify = await app()
-  await fastify.ready()
-
-  t.tearDown(fastify.close.bind(fastify))
+  const fastify = await buildFastify(t)
 
   const res = await fastify.inject({
     method: 'GET',
@@ -19,10 +16,7 @@ test('GET `/api/ping` route', async t => {
 })
 
 test('GET `/api/ping?delay=1` route', async t => {
-  const fastify = await app()
-  await fastify.ready()
-
-  t.tearDown(fastify.close.bind(fastify))
+  const fastify = await buildFastify(t)
 
   const res = await fastify.inject({
     method: 'GET',
@@ -36,10 +30,7 @@ test('GET `/api/ping?delay=1` route', async t => {
 })
 
 test('GET `/api/ping?delay=A` route', async t => {
-  const fastify = await app()
-  await fastify.ready()
-
-  t.tearDown(fastify.close.bind(fastify))
+  const fastify = await buildFastify(t)
 
   const res = await fastify.inject({
     method: 'GET',
@@ -51,10 +42,7 @@ test('GET `/api/ping?delay=A` route', async t => {
 })
 
 test('GET `/api/ping/bang` route', async t => {
-  const fastify = await app()
-  await fastify.ready()
-
-  t.tearDown(fastify.close.bind(fastify))
+  const fastify = await buildFastify(t)
 
   const res = await fastify.inject({
     method: 'GET',
@@ -68,10 +56,7 @@ test('GET `/api/ping/bang` route', async t => {
 })
 
 test('GET `/api/ping/bang?delay=1` route', async t => {
-  const fastify = await app()
-  await fastify.ready()
-
-  t.tearDown(fastify.close.bind(fastify))
+  const fastify = await buildFastify(t)
 
   const res = await fastify.inject({
     method: 'GET',
