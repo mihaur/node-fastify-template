@@ -9,7 +9,7 @@
 Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling (nodemon, standard), and node-tap tests. Can be used as a template to quickly bootstrap yor Node.js API http server project.
 
 ## All features
-* automatic reloading using [nodemon][nodemon-url]
+* automatic reloading using [fastify-cli][fastify-cli-url]
 * native [ESM][esm-url] module ([ECMAScript][ecma-script-url]) with imports/exports
 * load .env to environment and validate using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
 * linting and fixing using [standard][standard-url]
@@ -66,8 +66,9 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [ecma-script-url]: https://tc39.es/ecma262/#sec-ecmascript-language-scripts-and-modules
 [esm-url]: https://nodejs.org/api/esm.html#esm_modules_ecmascript_modules
 [fastify-url]: https://github.com/fastify/fastify
-[fastify-site-url]: fastify.io/
+[fastify-cli-url]: https://github.com/fastify/fastify-cli
 [fastify-env-url]: https://github.com/fastify/fastify-env
+[fastify-site-url]: fastify.io/
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-merge-dependabot]: https://github.com/marketplace/actions/github-action-merge-dependabot
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
@@ -79,7 +80,6 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [node-doc-url]: https://nodejs.org/en/docs/guides/debugging-getting-started/
 [node-tap-url]: https://node-tap.org/
 [node-url]: https://nodejs.org/en/
-[nodemon-url]: https://nodemon.io/
 [npm-url]: https://www.npmjs.com/
 [release-drafter-url]: https://github.com/marketplace/actions/release-drafter
 [snazzy-url]: https://github.com/standard/snazzy
