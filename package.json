@@ -9,15 +9,15 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "start": "nodemon ./src/server.js | pino-pretty -t",
-    "debug": "node --inspect-brk ./src/server.js | pino-pretty -t",
+    "start": "fastify start --log-level info --watch src/app.js | pino-pretty -t",
+    "debug": "fastify start --debug --log-level info --watch src/app.js | pino-pretty -t",
     "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
     "lint:fix": "standard --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
     "unit": "c8 --check-coverage --lines 100 tap --no-coverage test/*.test.js",
     "coverage": "c8 report --reporter=html && npx http-server -o coverage/",
     "coverage:ci": "c8 report --reporter=text --reporter=lcovonly",
     "test": "npm run lint && npm run unit",
-    "license-checker": "license-checker --production --onlyAllow='Apache-2.0;Apache-2.0 WITH LLVM-exception;MIT;ISC;BSD-3-Clause;BSD-2-Clause'",
+    "license-checker": "npx license-checker --production --onlyAllow='Apache-2.0;Apache-2.0 WITH LLVM-exception;MIT;ISC;BSD-3-Clause;BSD-2-Clause' --excludePackages 'buffers@0.1.1;event-stream@0.9.8;png-js@0.1.1'",
     "super-linter": "docker run -e RUN_LOCAL=true -v $PWD:/tmp/lint github/super-linter"
   },
   "repository": "github:mihaur/node-fastify-template",
@@ -39,8 +39,6 @@
   "devDependencies": {
     "c8": "^7.7.0",
     "husky": "^6.0.0",
-    "license-checker": "^25.0.1",
-    "nodemon": "^2.0.7",
     "pino-pretty": "^4.7.1",
     "snazzy": "^9.0.0",
     "standard": "*",
@@ -48,18 +46,8 @@
   },
   "dependencies": {
     "fastify": "^3.14.1",
+    "fastify-cli": "^2.9.1",
     "fastify-env": "^2.1.0",
     "fastify-mongodb": "^2.0.1"
-  },
-  "nodemonConfig": {
-    "verbose": false,
-    "watch": [
-      ".",
-      ".env"
-    ],
-    "ignore": [
-      "*.test.js"
-    ],
-    "delay": "2500"
   }
 }
