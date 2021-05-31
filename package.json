@@ -39,7 +39,7 @@
   "devDependencies": {
     "c8": "^7.7.2",
     "husky": "^6.0.0",
-    "pino-pretty": "^5.0.0",
+    "pino-pretty": "^5.0.1",
     "snazzy": "^9.0.0",
     "standard": "*",
     "tap": "^15.0.9"
