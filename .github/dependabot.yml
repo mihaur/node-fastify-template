@@ -1,14 +1,14 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    directory: '/'
+    directory: "/"
     schedule:
       interval: "daily"
-      time: "17:00"
+      time: "16:00"
       timezone: "CET"
     open-pull-requests-limit: 10
   - package-ecosystem: "npm"
-    directory: "/" # Location of package manifests
+    directory: "/"
     schedule:
       interval: daily
       time: "16:00"
