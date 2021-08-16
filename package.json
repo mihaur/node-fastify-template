@@ -44,7 +44,7 @@
     "tap": "^15.0.9"
   },
   "dependencies": {
-    "fastify": "^3.20.1",
+    "fastify": "^3.20.2",
     "fastify-cli": "^2.13.0",
     "fastify-env": "^2.1.1",
     "fastify-mongodb": "^4.0.1"
