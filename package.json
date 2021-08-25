@@ -37,7 +37,7 @@
   "license": "Apache-2.0 WITH LLVM-exception",
   "devDependencies": {
     "c8": "^7.8.0",
-    "husky": "^7.0.1",
+    "husky": "^7.0.2",
     "pino-pretty": "^6.0.0",
     "snazzy": "^9.0.0",
     "standard": "*",
