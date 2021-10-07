@@ -47,6 +47,6 @@
     "fastify": "^3.22.0",
     "fastify-cli": "^2.13.0",
     "fastify-env": "^2.1.1",
-    "fastify-mongodb": "^4.1.0"
+    "fastify-mongodb": "^4.1.1"
   }
 }
