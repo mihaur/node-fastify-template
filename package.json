@@ -42,7 +42,7 @@
     "pino-pretty": "^7.3.0",
     "snazzy": "^9.0.0",
     "standard": "*",
-    "tap": "^15.1.5"
+    "tap": "^15.1.6"
   },
   "dependencies": {
     "fastify": "^3.25.3",
