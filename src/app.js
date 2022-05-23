@@ -1,14 +1,11 @@
-import env from '@fastify/env'
-import mongodb from '@fastify/mongodb'
+import services from './services/index.js'
 
 import * as config from './config.js'
 
-import services from './services/index.js'
-
 export default async function (fastify, opts) {
   // fastify-cli does not support loading dotenv with option
-  await fastify.register(env, config.envOptions)
-  fastify.register(mongodb, {
+  await fastify.register(import('@fastify/env'), config.envOptions)
+  fastify.register(import('@fastify/mongodb'), {
     url: fastify.config.MONGODB_URI
   })
 
