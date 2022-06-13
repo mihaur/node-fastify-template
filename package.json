@@ -9,8 +9,8 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "start": "fastify start --log-level info --watch src/app.js | pino-pretty -t",
-    "debug": "fastify start --debug --log-level info --watch src/app.js | pino-pretty -t",
+    "start": "fastify start --log-level info --pretty-logs --watch src/app.js",
+    "debug": "fastify start --debug --log-level info --log-level info --pretty-logs --watch src/app.js",
     "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
     "lint:fix": "standard --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
     "unit": "c8 --check-coverage --lines 100 tap --no-coverage test/*.test.js",
@@ -39,15 +39,14 @@
   "devDependencies": {
     "c8": "^7.11.3",
     "husky": "^8.0.1",
-    "pino-pretty": "^8.0.0",
     "snazzy": "^9.0.0",
     "standard": "*",
     "tap": "^16.2.0"
   },
   "dependencies": {
-    "fastify": "^3.29.0",
+    "fastify": "^4.0.2",
     "fastify-cli": "^4.1.1",
-    "@fastify/env": "^3.0.0",
-    "@fastify/mongodb": "^5.0.0"
+    "@fastify/env": "^4.0.0",
+    "@fastify/mongodb": "^6.0.1"
   }
 }
