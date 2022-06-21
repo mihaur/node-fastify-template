@@ -16,27 +16,27 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
 * git pre-commit hooks using [husky][husky-url]
 * integration tests with [node-tap][node-tap-url]
 * coverage report by [c8][c8-url] that leverages native v8 coverage report
-* continuous integration using [Github Actions CI][github-actions-url]
+* continuous integration using [GitHub Actions CI][github-actions-url]
   * code coverage tracking using [coveralls][coveralls-url]
   * dependency updates notifications using [dependabot][dependabot-url]
-  * dependency merging using [Github Action Merge Dependabot][github-action-merge-dependabot]
+  * dependency merging using [GitHub Action Merge Dependabot][github-action-merge-dependabot]
   * authoring of release notes using [release-drafter][release-drafter-url]
   * code linting with [Super-Linter][super-litner-url]
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for deveNopm.jsent and testing purposes.
 
 ### Prerequisites
 
-* [node][node-url] with [npm][npm-url]
+* [Node.js][node-url] with [npm][npm-url]
 * [git][git-book-url]
 
 ### Installing
 
 * `git clone git@github.com:mihaur/node-fastify-template.git`
 * `cd cd node-fastify-template`
-* `cp .env.sample .env`
+* `cp .env.example .env`
 * `npm install`
 * `npm start`
 
