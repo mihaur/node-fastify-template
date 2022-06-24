@@ -22,6 +22,9 @@ lib-cov
 coverage
 *.lcov
 
+# MegaLinter reports
+report
+
 # nyc test coverage
 .nyc_output
 
