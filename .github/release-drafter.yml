@@ -1,35 +1,35 @@
 ---
-name-template: 'v$RESOLVED_VERSION 🌈'
-tag-template: 'v$RESOLVED_VERSION'
+name-template: "v$RESOLVED_VERSION 🌈"
+tag-template: "v$RESOLVED_VERSION"
 categories:
-  - title: '🚀 Features'
+  - title: "🚀 Features"
     labels:
-      - 'feat'
-      - 'feature'
-      - 'enhancement'
-  - title: '🐛 Bug Fixes'
+      - "feat"
+      - "feature"
+      - "enhancement"
+  - title: "🐛 Bug Fixes"
     labels:
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
-  - title: '🧰 Maintenance'
-    labels: 
-      - 'chore'
-      - 'build'
-  - title: '📚 Docs'
-    labels: 
-      - 'docs'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+      - "fix"
+      - "bugfix"
+      - "bug"
+  - title: "🧰 Maintenance"
+    labels:
+      - "chore"
+      - "build"
+  - title: "📚 Docs"
+    labels:
+      - "docs"
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
 version-resolver:
   major:
     labels:
-      - 'major'
+      - "major"
   minor:
     labels:
-      - 'minor'
+      - "minor"
   patch:
     labels:
-      - 'patch'
+      - "patch"
   default: patch
 template: |
   ## What's Changed

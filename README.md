@@ -5,10 +5,12 @@
 ![GitHub Actions CI][github-action-nodejs-ci-url]
 ![GitHub Actions CI][github-action-lint-code-base-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
+[![MegaLinter](https://github.com/mihaur/node-fastify-template/workflows/MegaLinter/badge.svg?branch=master)](https://github.com/mihaur/node-fastify-template/actions?query=workflow%3AMegaLinter+branch%3Amaste)
 
 Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling (nodemon, standard), and node-tap tests. Can be used as a template to quickly bootstrap yor Node.js API http server project.
 
 ## All features
+
 * automatic reloading using [fastify-cli][fastify-cli-url]
 * native [ESM][esm-url] module ([ECMAScript][ecma-script-url]) with imports/exports
 * load .env to environment and validate using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
@@ -21,11 +23,11 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
   * dependency updates notifications using [dependabot][dependabot-url]
   * dependency merging using [GitHub Action Merge Dependabot][github-action-merge-dependabot]
   * authoring of release notes using [release-drafter][release-drafter-url]
-  * code linting with [Super-Linter][super-litner-url]
+  * code linting with [MegaLinter][mega-litner-url]
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for deveNopm.jsent and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -53,6 +55,7 @@ Linting is done using [standard][standard-url]. Use `npm run lint` to run linter
 Integration tests are stored in test/**.spec.js. Tests are run by [node-tap][node-tap-url]. Run `npm run test` to run both unit and integration tests.
 
 #### Coverage reports
+
 Run `npm run coverage` to generate HTML test coverage report. Browser is opened after tests are run.
 
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
@@ -68,7 +71,7 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [fastify-url]: https://github.com/fastify/fastify
 [fastify-cli-url]: https://github.com/fastify/fastify-cli
 [fastify-env-url]: https://github.com/fastify/fastify-env
-[fastify-site-url]: fastify.io/
+[fastify-site-url]: https://www.fastify.io/
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-merge-dependabot]: https://github.com/marketplace/actions/github-action-merge-dependabot
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
@@ -85,4 +88,4 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [snazzy-url]: https://github.com/standard/snazzy
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standard-url]: http://standardjs.com/
-[super-litner-url]: https://github.com/marketplace/actions/super-linter
+[mega-litner-url]: https://megalinter.github.io
