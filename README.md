@@ -3,9 +3,8 @@
 [![js-standard-style][standard-image]][standard-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
 ![GitHub Actions CI][github-action-nodejs-ci-url]
-![GitHub Actions CI][github-action-lint-code-base-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
-[![MegaLinter](https://github.com/mihaur/node-fastify-template/workflows/MegaLinter/badge.svg?branch=master)](https://github.com/mihaur/node-fastify-template/actions?query=workflow%3AMegaLinter+branch%3Amaste)
+[![MegaLinter](https://github.com/mihaur/node-fastify-template/workflows/MegaLinter/badge.svg?branch=master)](https://github.com/mihaur/node-fastify-template/actions?query=workflow%3AMegaLinter+branch%3Amaster)
 
 Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling (nodemon, standard), and node-tap tests. Can be used as a template to quickly bootstrap yor Node.js API http server project.
 
