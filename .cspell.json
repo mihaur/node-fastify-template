@@ -13,9 +13,6 @@
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": [
-    "fastify",
-    "mihaur"
-  ],
+  "words": ["fastify", "mihaur"],
   "version": "0.2"
 }
