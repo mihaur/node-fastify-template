@@ -35,9 +35,9 @@ jobs:
         uses: actions/setup-node@v3.4.1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
+      - name: Install dependencies
         run: |
-          npm install
+          npm ci
       - name: Validate dependency licenses
         run: |
           npm run license-checker

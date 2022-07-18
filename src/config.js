@@ -4,7 +4,7 @@ export const envOptions = {
     type: 'object',
     required: ['MONGODB_URI'],
     properties: {
-      PORT: {
+      FASTIFY_PORT: {
         type: 'string',
         default: 3000
       },
