@@ -36,7 +36,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 * `git clone git@github.com:mihaur/node-fastify-template.git`
-* `cd cd node-fastify-template`
+* `cd node-fastify-template`
 * `cp .env.example .env`
 * `npm install`
 * `npm start`
@@ -67,19 +67,15 @@ Run `npm run coverage` to generate HTML test coverage report. Browser is opened 
 [dotenv-url]: https://github.com/motdotla/dotenv
 [ecma-script-url]: https://tc39.es/ecma262/#sec-ecmascript-language-scripts-and-modules
 [esm-url]: https://nodejs.org/api/esm.html#esm_modules_ecmascript_modules
-[fastify-url]: https://github.com/fastify/fastify
 [fastify-cli-url]: https://github.com/fastify/fastify-cli
 [fastify-env-url]: https://github.com/fastify/fastify-env
 [fastify-site-url]: https://www.fastify.io/
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-merge-dependabot]: https://github.com/marketplace/actions/github-action-merge-dependabot
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
-[github-action-lint-code-base-url]: https://github.com/mihaur/node-fastify-template/workflows/Lint%20Code%20Base/badge.svg
 [github-actions-url]: https://github.com/features/actions
 [husky-url]: https://typicode.github.io/husky
-[jsdoc-url]: https://devdocs.io/
 [mongodb-uri]: https://www.mongodb.com/
-[node-doc-url]: https://nodejs.org/en/docs/guides/debugging-getting-started/
 [node-tap-url]: https://node-tap.org/
 [node-url]: https://nodejs.org/en/
 [npm-url]: https://www.npmjs.com/

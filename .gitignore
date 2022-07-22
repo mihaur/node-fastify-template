@@ -23,7 +23,7 @@ coverage
 *.lcov
 
 # MegaLinter reports
-report
+megalinter-reports/
 
 # nyc test coverage
 .nyc_output
