@@ -12,6 +12,7 @@ export default async function routes (fastify, options) {
       const response = { ping: 'pong' }
       await logAccess(response, fastify.mongo.db.collection('access-log'))
       await sleep(request.query.delay)
+      // nosemgrep: javascript.express.security.audit.xss.direct-response-write.direct-response-write
       reply.send(response)
     }
   })
@@ -24,6 +25,7 @@ export default async function routes (fastify, options) {
       const response = { ping: request.params.response }
       await logAccess(response, fastify.mongo.db.collection('access-log'))
       await sleep(request.query.delay)
+      // nosemgrep: javascript.express.security.audit.xss.direct-response-write.direct-response-write
       reply.send(response)
     }
   })

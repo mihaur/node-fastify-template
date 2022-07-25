@@ -1,6 +1,7 @@
 import { test } from 'tap'
 import { buildFastify, getLastItem } from './helper.js'
 
+/* jscpd:ignore-start */
 test('GET `/api/ping` route', async t => {
   const app = await buildFastify(t)
 
@@ -73,3 +74,4 @@ test('GET `/api/ping/bang?delay=1` route', async t => {
   const lastLogItem = await getLastItem(app, 'access-log')
   t.same(lastLogItem, { ping: 'bang' })
 })
+/* jscpd:ignore-end */
