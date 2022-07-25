@@ -13,6 +13,6 @@
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["fastify", "mihaur"],
+  "words": ["fastify", "mihaur", "nosemgrep", "TRIVY"],
   "version": "0.2"
 }
