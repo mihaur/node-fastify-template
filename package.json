@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "fastify": "^4.5.0",
-    "fastify-cli": "^5.0.1",
+    "fastify-cli": "^5.1.0",
     "@fastify/env": "^4.1.0",
     "@fastify/mongodb": "^6.0.1"
   }
