@@ -41,7 +41,7 @@
     "husky": "^8.0.2",
     "snazzy": "^9.0.0",
     "standard": "*",
-    "tap": "^16.3.0"
+    "tap": "^16.3.1"
   },
   "dependencies": {
     "fastify": "^4.9.2",
