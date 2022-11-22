@@ -55,7 +55,7 @@ Integration tests are stored in test/**.spec.js. Tests are run by [node-tap][nod
 
 #### Coverage reports
 
-Run `npm run coverage` to generate HTML test coverage report. Browser is opened after tests are run.
+Run `npm run coverage` to generate HTML test coverage report. Web browser is opened after tests are run.
 
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
 [conventional-commits-url]: https://conventionalcommits.org/

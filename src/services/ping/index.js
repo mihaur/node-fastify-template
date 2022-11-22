@@ -1,7 +1,7 @@
-import { logAccess } from '../../utils/utils.js'
+import { sleep, createLogger } from '../../utils/utils.js'
 import { pingSchema } from './schema.js'
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+const logAccess = createLogger('ping')
 
 export default async function routes (fastify, options) {
   fastify.route({

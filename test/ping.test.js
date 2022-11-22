@@ -1,9 +1,12 @@
 import { test } from 'tap'
-import { buildFastify, getLastItem } from './helper.js'
+import { buildFastify, getLastLogItem } from './helper.js'
+
+const lastLogItem = getLastLogItem('ping')
 
 /* jscpd:ignore-start */
 test('GET `/api/ping` route', async t => {
   const app = await buildFastify(t)
+  const expectedResult = { ping: 'pong' }
 
   const res = await app.inject({
     method: 'GET',
@@ -12,13 +15,13 @@ test('GET `/api/ping` route', async t => {
 
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
-  t.same(res.json(), { ping: 'pong' })
-  const lastLogItem = await getLastItem(app, 'access-log')
-  t.same(lastLogItem, { ping: 'pong' })
+  t.same(res.json(), expectedResult)
+  t.same(await lastLogItem(app.mongo.db), expectedResult)
 })
 
 test('GET `/api/ping?delay=1` route', async t => {
   const app = await buildFastify(t)
+  const expectedResult = { ping: 'pong' }
 
   const res = await app.inject({
     method: 'GET',
@@ -27,9 +30,8 @@ test('GET `/api/ping?delay=1` route', async t => {
 
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
-  t.same(res.json(), { ping: 'pong' })
-  const lastLogItem = await getLastItem(app, 'access-log')
-  t.same(lastLogItem, { ping: 'pong' })
+  t.same(res.json(), expectedResult)
+  t.same(await lastLogItem(app.mongo.db), expectedResult)
 })
 
 test('GET `/api/ping?delay=A` route', async t => {
@@ -47,6 +49,7 @@ test('GET `/api/ping?delay=A` route', async t => {
 
 test('GET `/api/ping/bang` route', async t => {
   const app = await buildFastify(t)
+  const expectedResult = { ping: 'bang' }
 
   const res = await app.inject({
     method: 'GET',
@@ -55,14 +58,13 @@ test('GET `/api/ping/bang` route', async t => {
 
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
-  t.same(res.json(), { ping: 'bang' })
-  const lastLogItem = await getLastItem(app, 'access-log')
-  t.same(lastLogItem, { ping: 'bang' })
+  t.same(res.json(), expectedResult)
+  t.same(await lastLogItem(app.mongo.db), expectedResult)
 })
 
 test('GET `/api/ping/bang?delay=1` route', async t => {
   const app = await buildFastify(t)
-
+  const expectedResult = { ping: 'bang' }
   const res = await app.inject({
     method: 'GET',
     url: '/api/ping/bang?delay=1'
@@ -70,8 +72,7 @@ test('GET `/api/ping/bang?delay=1` route', async t => {
 
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
-  t.same(res.json(), { ping: 'bang' })
-  const lastLogItem = await getLastItem(app, 'access-log')
-  t.same(lastLogItem, { ping: 'bang' })
+  t.same(res.json(), expectedResult)
+  t.same(await lastLogItem(app.mongo.db), expectedResult)
 })
 /* jscpd:ignore-end */
