@@ -1,5 +1,7 @@
 import { test } from 'tap'
-import { buildFastify, getLastItem } from './helper.js'
+import { buildFastify, getLastLogItem } from './helper.js'
+
+const lastLogItem = getLastLogItem('headers')
 
 /* jscpd:ignore-start */
 test('GET `/api/headers` route', async t => {
@@ -16,8 +18,7 @@ test('GET `/api/headers` route', async t => {
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
   t.same(res.json(), expectedHeaders)
-  const lastLogItem = await getLastItem(app, 'headers', 'access-log')
-  t.same(lastLogItem, expectedHeaders)
+  t.same(expectedHeaders, await lastLogItem(app.mongo.db))
 })
 
 test('GET `/api/headers` route additional headers', async t => {
@@ -36,8 +37,7 @@ test('GET `/api/headers` route additional headers', async t => {
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
   t.same(res.json(), expectedHeaders)
-  const lastLogItem = await getLastItem(app, 'headers', 'access-log')
-  t.same(lastLogItem, expectedHeaders)
+  t.same(expectedHeaders, await lastLogItem(app.mongo.db))
 })
 
 test('GET `/api/headers?delay=1` route', async t => {
@@ -54,8 +54,7 @@ test('GET `/api/headers?delay=1` route', async t => {
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
   t.same(res.json(), expectedHeaders)
-  const lastLogItem = await getLastItem(app, 'headers', 'access-log')
-  t.same(lastLogItem, expectedHeaders)
+  t.same(expectedHeaders, await lastLogItem(app.mongo.db))
 })
 
 test('GET `/api/headers?delay=A` route', async t => {
@@ -70,5 +69,4 @@ test('GET `/api/headers?delay=A` route', async t => {
   t.equal(res.statusCode, 400)
   t.equal(res.statusMessage, 'Bad Request')
 })
-
 /* jscpd:ignore-end */

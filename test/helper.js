@@ -9,7 +9,9 @@ export async function buildFastify (t, opts = {}) {
   return fastify
 }
 
-export async function getLastItem (app, service, collection) {
-  const lastLogItem = await app.mongo.db.collection(collection).findOne({ service }, { sort: { $natural: -1 }, projection: { _id: 0, service: 0, createdAt: 0 } })
-  return lastLogItem
+export function getLastLogItem (service) {
+  return async db => {
+    const lastLogItem = await db.collection('access-log').findOne({ service }, { sort: { $natural: -1 }, projection: { _id: 0, service: 0, createdAt: 0 } })
+    return lastLogItem
+  }
 }
