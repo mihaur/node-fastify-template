@@ -1,7 +1,5 @@
-import { logAccess } from '../../utils/utils.js'
+import { sleep, logAccess } from '../../utils/utils.js'
 import { pingSchema } from './schema.js'
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export default async function routes (fastify, options) {
   fastify.route({
@@ -10,7 +8,7 @@ export default async function routes (fastify, options) {
     schema: pingSchema,
     handler: async function (request, reply) {
       const response = { ping: 'pong' }
-      await logAccess(response, fastify.mongo.db.collection('access-log'))
+      await logAccess('ping', response, fastify.mongo.db.collection('access-log'))
       await sleep(request.query.delay)
       // nosemgrep: javascript.express.security.audit.xss.direct-response-write.direct-response-write
       reply.send(response)
@@ -23,7 +21,7 @@ export default async function routes (fastify, options) {
     schema: pingSchema,
     handler: async function (request, reply) {
       const response = { ping: request.params.response }
-      await logAccess(response, fastify.mongo.db.collection('access-log'))
+      await logAccess('ping', response, fastify.mongo.db.collection('access-log'))
       await sleep(request.query.delay)
       // nosemgrep: javascript.express.security.audit.xss.direct-response-write.direct-response-write
       reply.send(response)

@@ -13,7 +13,8 @@ test('GET `/api/ping` route', async t => {
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
   t.same(res.json(), { ping: 'pong' })
-  const lastLogItem = await getLastItem(app, 'access-log')
+  const lastLogItem = await getLastItem(app, 'ping', 'access-log')
+  console.log('ping', lastLogItem)
   t.same(lastLogItem, { ping: 'pong' })
 })
 
@@ -28,7 +29,7 @@ test('GET `/api/ping?delay=1` route', async t => {
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
   t.same(res.json(), { ping: 'pong' })
-  const lastLogItem = await getLastItem(app, 'access-log')
+  const lastLogItem = await getLastItem(app, 'ping', 'access-log')
   t.same(lastLogItem, { ping: 'pong' })
 })
 
@@ -56,7 +57,7 @@ test('GET `/api/ping/bang` route', async t => {
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
   t.same(res.json(), { ping: 'bang' })
-  const lastLogItem = await getLastItem(app, 'access-log')
+  const lastLogItem = await getLastItem(app, 'ping', 'access-log')
   t.same(lastLogItem, { ping: 'bang' })
 })
 
@@ -71,7 +72,7 @@ test('GET `/api/ping/bang?delay=1` route', async t => {
   t.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   t.equal(res.statusCode, 200)
   t.same(res.json(), { ping: 'bang' })
-  const lastLogItem = await getLastItem(app, 'access-log')
+  const lastLogItem = await getLastItem(app, 'ping', 'access-log')
   t.same(lastLogItem, { ping: 'bang' })
 })
 /* jscpd:ignore-end */
