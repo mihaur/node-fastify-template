@@ -1,4 +1,4 @@
-export const envOptions = {
+export const config = {
   dotenv: true, // { debug: true },
   schema: {
     type: 'object',
