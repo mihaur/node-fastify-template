@@ -6,6 +6,8 @@ on:
     branches:
       - main
 
+permissions: read-all
+
 jobs:
   update_release_draft:
     runs-on: ubuntu-latest
