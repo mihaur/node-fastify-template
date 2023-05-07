@@ -1,11 +1,10 @@
 import Fastify from 'fastify'
 import app from '../src/app.js'
 
-export async function buildFastify (t, opts = {}) {
+export async function buildFastify (opts = {}) {
   const fastify = await app(Fastify(), opts)
   await fastify.ready()
 
-  t.teardown(fastify.close.bind(fastify))
   return fastify
 }
 

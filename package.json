@@ -13,7 +13,7 @@
     "debug": "fastify start --debug --log-level info --log-level info --pretty-logs --watch src/app.js",
     "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
     "lint:fix": "standard --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
-    "unit": "c8 --check-coverage --lines 100 tap --no-coverage test/*.test.js",
+    "unit": "c8 --check-coverage --lines 100 node --test test",
     "coverage": "c8 report --reporter=html && npx http-server -o coverage/",
     "coverage:ci": "c8 report --reporter=text --reporter=lcovonly",
     "test": "npm run lint && npm run unit",
@@ -40,8 +40,7 @@
     "c8": "^7.13.0",
     "husky": "^8.0.3",
     "snazzy": "^9.0.0",
-    "standard": "*",
-    "tap": "^16.3.4"
+    "standard": "*"
   },
   "dependencies": {
     "fastify": "^4.15.0",

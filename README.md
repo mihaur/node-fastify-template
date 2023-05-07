@@ -15,7 +15,7 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
 * load .env to environment and validate using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
 * linting and fixing using [standard][standard-url]
 * git pre-commit hooks using [husky][husky-url]
-* integration tests with [node-tap][node-tap-url]
+* integration tests with [node test runner][node-test-url]
 * coverage report by [c8][c8-url] that leverages native v8 coverage report
 * continuous integration using [GitHub Actions CI][github-actions-url]
   * code coverage tracking using [coveralls][coveralls-url]
@@ -51,7 +51,7 @@ Linting is done using [standard][standard-url]. Use `npm run lint` to run linter
 
 ### Integration tests
 
-Integration tests are stored in test/**.spec.js. Tests are run by [node-tap][node-tap-url]. Run `npm run test` to run both unit and integration tests.
+Integration tests are stored in test/**.spec.js. Tests are run by [Node test runner][node-test-url]. Run `npm run test` to run both unit and integration tests.
 
 #### Coverage reports
 
@@ -76,7 +76,7 @@ Run `npm run coverage` to generate HTML test coverage report. Web browser is ope
 [github-actions-url]: https://github.com/features/actions
 [husky-url]: https://typicode.github.io/husky
 [mongodb-uri]: https://www.mongodb.com/
-[node-tap-url]: https://node-tap.org/
+[node-test-url]: https://nodejs.org/api/test.html
 [node-url]: https://nodejs.org/en/
 [npm-url]: https://www.npmjs.com/
 [release-drafter-url]: https://github.com/marketplace/actions/release-drafter
