@@ -56,7 +56,7 @@ jobs:
           CI: true
           MONGODB_URI: mongodb://localhost:27017/test-db # use mongoDB docker
       - name: Coveralls Parallel
-        uses: coverallsapp/github-action@v2.1.2
+        uses: coverallsapp/github-action@v2.2.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: run-${{ matrix.os }}-${{ matrix.node-version }}
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Coveralls Finished
-        uses: coverallsapp/github-action@v2.1.2
+        uses: coverallsapp/github-action@v2.2.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
