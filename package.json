@@ -37,7 +37,7 @@
   "author": "Miha Urbanija <miha.urbanija@gmail.com>",
   "license": "Apache-2.0 WITH LLVM-exception",
   "devDependencies": {
-    "c8": "^7.14.0",
+    "c8": "^8.0.0",
     "husky": "^8.0.3",
     "snazzy": "^9.0.0",
     "standard": "*"
