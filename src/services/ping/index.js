@@ -1,14 +1,12 @@
 import { sleep, createLogger } from '../../utils/utils.js'
-import { pingSchema } from './schema.js'
+import { pingSchema as schema } from './schema.js'
 
 const logAccess = createLogger('ping')
 
 export default async function routes (fastify, options) {
-  fastify.route({
-    method: 'GET',
-    url: '/',
-    schema: pingSchema,
-    handler: async function (request, reply) {
+  fastify.get('/', {
+    schema,
+    handler: async (request, reply) => {
       const response = { ping: 'pong' }
       await logAccess(response, fastify.mongo.db.collection('access-log'))
       await sleep(request.query.delay)
@@ -17,11 +15,8 @@ export default async function routes (fastify, options) {
     }
   })
 
-  fastify.route({
-    method: 'GET',
-    url: '/:response',
-    schema: pingSchema,
-    handler: async function (request, reply) {
+  fastify.get('/:response', {
+    handler: async (request, reply) => {
       const response = { ping: request.params.response }
       await logAccess(response, fastify.mongo.db.collection('access-log'))
       await sleep(request.query.delay)
