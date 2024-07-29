@@ -44,7 +44,7 @@ jobs:
         run: |
           npm run license-checker
       - name: Start MongoDB in docker
-        uses: DigiPie/mongo-action@v2.0.1
+        uses: DigiPie/mongo-action@v3
         with:
           image_version: latest
           port: 27017
