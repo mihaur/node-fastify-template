@@ -5,12 +5,12 @@ updates:
     schedule:
       interval: "daily"
       time: "16:00"
-      timezone: "CET"
+      timezone: "Europe/Ljubljana"
     open-pull-requests-limit: 10
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: daily
       time: "16:00"
-      timezone: "CET"
+      timezone: "Europe/Ljubljana"
     open-pull-requests-limit: 10
