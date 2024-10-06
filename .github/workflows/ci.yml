@@ -20,9 +20,9 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@2cdf405574d6ef1f33a1d12acccd3ae82f47b3f2
         env:
           cache-name: cache-node-modules
         with:
@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-        uses: actions/setup-node@v4.0.4
+        uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
@@ -44,7 +44,7 @@ jobs:
         run: |
           npm run license-checker
       - name: Start MongoDB in docker
-        uses: DigiPie/mongo-action@v2.0.1
+        uses: DigiPie/mongo-action@6d27db18a4ce1bb707cd221e3408e5c7a8590c8c
         with:
           image_version: latest
           port: 27017
@@ -56,7 +56,7 @@ jobs:
           CI: true
           MONGODB_URI: mongodb://localhost:27017/test-db # use mongoDB docker
       - name: Coveralls Parallel
-        uses: coverallsapp/github-action@v2.3.0
+        uses: coverallsapp/github-action@643bc377ffa44ace6394b2b5d0d3950076de9f63
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: run-${{ matrix.os }}-${{ matrix.node-version }}
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Coveralls Finished
-        uses: coverallsapp/github-action@v2.3.0
+        uses: coverallsapp/github-action@643bc377ffa44ace6394b2b5d0d3950076de9f63
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
@@ -79,6 +79,6 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3
+      - uses: fastify/github-action-merge-dependabot@0fa926bf56cf573a599afcc6d39b25b734fd6252
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
