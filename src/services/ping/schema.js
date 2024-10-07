@@ -1,6 +1,9 @@
 export const pingSchema = {
   querystring: {
-    delay: { type: 'integer' }
+    type: 'object',
+    properties: {
+      delay: { type: 'integer' }
+    }
   },
   response: {
     200: {

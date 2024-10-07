@@ -1,6 +1,9 @@
 export const headersSchema = {
   querystring: {
-    delay: { type: 'integer' }
+    type: 'object',
+    properties: {
+      delay: { type: 'integer' }
+    }
   },
   response: {
     200: {
