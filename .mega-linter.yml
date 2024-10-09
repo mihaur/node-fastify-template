@@ -1,15 +1,27 @@
+---
 # Configuration file for MegaLinter
-# See all available variables at https://oxsecurity.github.io/megalinter/configuration/ and in linters documentation
+# See all available variables at https://megalinter.io/latest/config-file/ and in linters documentation
 
 # APPLY_FIXES: all # all, none, or list of linter keys
 # ENABLE: # If you use ENABLE variable, all other languages/formats/tooling-formats will be disabled by default
 # ENABLE_LINTERS: # If you use ENABLE_LINTERS variable, all other linters will be disabled by default
+#   - REPOSITORY_CHECKOV
 # DISABLE:
 #  - COPYPASTE # Comment to enable checks of excessive copy-pastes
 # - SPELL # Uncomment to disable checks of spelling mistakes
 SHOW_ELAPSED_TIME: true
 FILEIO_REPORTER: false
-DISABLE_ERRORS: true # Uncomment if you want MegaLinter to detect errors but not block CI to pass
-# DISABLE_ERRORS_LINTERS: REPOSITORY_TRIVY
-FILTER_REGEX_EXCLUDE: '(node_modules)'
-LOG_LEVEL: DEBUG
+# DISABLE_ERRORS: true # Uncomment if you want MegaLinter to detect errors but not block CI to pass
+DISABLE_ERRORS_LINTERS:
+  - REPOSITORY_DEVSKIM # issues with different UID as megalinter is running as root
+# FILTER_REGEX_EXCLUDE: '(bru)' # files in .gitignore are already filtered by default
+LOG_LEVEL: DEBUG # INFO # DEBUG
+REPOSITORY_CHECKOV_ARGUMENTS:
+  - "--skip-path"
+  - "coverage"
+  - "--skip-path"
+  - "megalinter-reports"
+REPOSITORY_DEVSKIM_ARGUMENTS:
+  - "--ignore-globs"
+  - "**/.git/**"
+  - "--skip-git-ignored-files"

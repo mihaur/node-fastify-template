@@ -1,7 +1,7 @@
 ---
 name: Node.JS CI
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     paths-ignore:
       - "*.md"
