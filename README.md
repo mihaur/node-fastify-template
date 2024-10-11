@@ -1,19 +1,19 @@
 # Node.js API server based on fastify + MongoDB project template
 
-[![js-standard-style][standard-image]][standard-url]
+[![neostandard javascript style][neostandard-image]][neostandard-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
 ![GitHub Actions CI][github-action-nodejs-ci-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 [![MegaLinter](https://github.com/mihaur/node-fastify-template/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/mihaur/node-fastify-template/actions?query=workflow%3AMegaLinter+branch%3Amain)
 
-Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling (nodemon, standard), and node-tap tests. Can be used as a template to quickly bootstrap yor Node.js API http server project.
+Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling and native node test runner. Can be used as a template to quickly bootstrap yor Node.js API http server project.
 
 ## All features
 
 * automatic reloading using [fastify-cli][fastify-cli-url]
 * native [ESM][esm-url] module ([ECMAScript][ecma-script-url]) with imports/exports
 * load .env to environment and validate using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
-* linting and fixing using [standard][standard-url]
+* linting and fixing using [neostandard][neostandard-url]
 * git pre-commit hooks using [husky][husky-url]
 * integration tests with [node test runner][node-test-url]
 * coverage report by [c8][c8-url] that leverages native v8 coverage report
@@ -47,7 +47,7 @@ Use .env to store your environment dependant configuration options and secrets. 
 
 ### Linting and code fixing
 
-Linting is done using [standard][standard-url]. Use `npm run lint` to run linter. Linter output is piped trough [snazzy][snazzy-url] which converts "compact" text from a linter to "stylish". You can also automatically fix linter errors by running `npm run lint:fix`.
+Linting is done using [neostandard][neostandard-url]. Use `npm run lint` to run linter. You can also automatically fix linter errors by running `npm run lint:fix`.
 
 ### Integration tests
 
@@ -80,7 +80,6 @@ Run `npm run coverage` to generate HTML test coverage report. Web browser is ope
 [node-url]: https://nodejs.org/en/
 [npm-url]: https://www.npmjs.com/
 [release-drafter-url]: https://github.com/marketplace/actions/release-drafter
-[snazzy-url]: https://github.com/standard/snazzy
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-[standard-url]: http://standardjs.com/
+[neostandard-image]: https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat
+[neostandard-url]: https://github.com/neostandard/neostandard
 [mega-litner-url]: https://megalinter.github.io
