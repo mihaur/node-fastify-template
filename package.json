@@ -11,8 +11,8 @@
   "scripts": {
     "start": "fastify start --log-level info --pretty-logs --watch src/app.js",
     "debug": "fastify start --debug --log-level info --log-level info --pretty-logs --watch src/app.js",
-    "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
-    "lint:fix": "standard --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "unit": "c8 --check-coverage --lines 100 node --test",
     "coverage": "c8 report --reporter=html && npx http-server -o coverage/",
     "coverage:ci": "c8 report --reporter=text --reporter=lcovonly",
@@ -39,9 +39,9 @@
   "license": "Apache-2.0 WITH LLVM-exception",
   "devDependencies": {
     "c8": "^10.1.2",
+    "eslint": "^9.12.0",
     "husky": "^9.1.6",
-    "snazzy": "^9.0.0",
-    "standard": "*"
+    "neostandard": "^0.11.6"
   },
   "dependencies": {
     "fastify": "^5.0.0",

@@ -13,6 +13,13 @@
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["DEVSKIM", "fastify", "mihaur", "nosemgrep", "TRIVY"],
+  "words": [
+    "DEVSKIM",
+    "fastify",
+    "mihaur",
+    "neostandard",
+    "nosemgrep",
+    "TRIVY"
+  ],
   "version": "0.2"
 }
