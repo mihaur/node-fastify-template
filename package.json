@@ -13,9 +13,8 @@
     "debug": "fastify start --debug --log-level info --log-level info --pretty-logs --watch src/app.js",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "unit": "c8 --check-coverage --lines 100 node --test",
-    "coverage": "c8 report --reporter=html && npx http-server -o coverage/",
-    "coverage:ci": "c8 report --reporter=text --reporter=lcovonly",
+    "unit": "node --test --experimental-test-coverage",
+    "coverage:lcov": "npm run unit -- --test-reporter=lcov --test-reporter-destination=lcov.info",
     "test": "npm run lint && npm run unit",
     "license-checker": "npx license-checker --production --onlyAllow='Apache-2.0;Apache-2.0 WITH LLVM-exception;MIT;ISC;BSD-3-Clause;BSD-2-Clause' --excludePackages 'buffers@0.1.1;event-stream@0.9.8;png-js@0.1.1'",
     "super-linter": "docker run -e RUN_LOCAL=true -v $PWD:/tmp/lint github/super-linter",
@@ -38,7 +37,6 @@
   "author": "Miha Urbanija <miha.urbanija@gmail.com>",
   "license": "Apache-2.0 WITH LLVM-exception",
   "devDependencies": {
-    "c8": "^10.1.2",
     "eslint": "^9.12.0",
     "husky": "^9.1.6",
     "neostandard": "^0.11.6"
