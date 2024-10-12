@@ -6,7 +6,7 @@
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 [![MegaLinter](https://github.com/mihaur/node-fastify-template/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/mihaur/node-fastify-template/actions?query=workflow%3AMegaLinter+branch%3Amain)
 
-Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling and native node test runner. Can be used as a template to quickly bootstrap yor Node.js API http server project.
+Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling and native node test runner with native coverage. Can be used as a template to quickly bootstrap yor Node.js API http server project.
 
 ## All features
 
@@ -16,7 +16,7 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
 * linting and fixing using [neostandard][neostandard-url]
 * git pre-commit hooks using [husky][husky-url]
 * integration tests with [node test runner][node-test-url]
-* coverage report by [c8][c8-url] that leverages native v8 coverage report
+* coverage report using native node coverage
 * continuous integration using [GitHub Actions CI][github-actions-url]
   * code coverage tracking using [coveralls][coveralls-url]
   * dependency updates notifications using [dependabot][dependabot-url]
@@ -62,7 +62,6 @@ Run `npm run coverage` to generate HTML test coverage report. Web browser is ope
 [coveralls-url]: https://coveralls.io/
 [coveralls-repo-url]: https://coveralls.io/github/mihaur/node-fastify-template?branch=main
 [coveralls-badge-url]: https://coveralls.io/repos/github/mihaur/node-fastify-template/badge.svg?branch=main
-[c8-url]: https://github.com/bcoe/c8
 [dependabot-url]: https://dependabot.com/
 [dotenv-url]: https://github.com/motdotla/dotenv
 [ecma-script-url]: https://tc39.es/ecma262/#sec-ecmascript-language-scripts-and-modules
