@@ -17,7 +17,7 @@ DISABLE_ERRORS_LINTERS:
   - REPOSITORY_DEVSKIM # issues with different UID as megalinter is running as root
 # FILTER_REGEX_EXCLUDE: '(bru)' # files in .gitignore are already filtered by default
 LOG_LEVEL: DEBUG # INFO # DEBUG
-SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (package-lock.yml)
+SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (package-lock\.json)
 REPOSITORY_CHECKOV_ARGUMENTS:
   - "--skip-path"
   - "coverage"
