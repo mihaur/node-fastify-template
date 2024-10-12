@@ -50,8 +50,7 @@ jobs:
           port: 27017
       - name: Run tests
         run: |
-          npm run unit
-          npm run coverage:ci
+          npm run coverage:lcov
         env:
           CI: true
           MONGODB_URI: mongodb://localhost:27017/test-db # use mongoDB docker
