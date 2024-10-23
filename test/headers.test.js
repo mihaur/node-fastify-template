@@ -15,18 +15,21 @@ afterEach(async (t) => {
 
 test('GET `/api/headers` route', async t => {
   const expectedHeaders = {
-    'user-agent': 'lightMyRequest'
+    'user-agent': 'lightMyRequest',
+    host: 'host'
   }
 
   const res = await t.app.inject({
     method: 'GET',
-    url: '/api/headers'
+    url: '/api/headers',
+    headers: {
+      host: 'host'
+    }
   })
 
   assert.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   assert.equal(res.statusCode, 200)
   const headers = res.json()
-  delete headers.host
   assert.deepEqual(headers, expectedHeaders)
   assert.deepEqual(await lastLogItem(t.app.mongo.db), expectedHeaders)
 })
@@ -34,37 +37,43 @@ test('GET `/api/headers` route', async t => {
 test('GET `/api/headers` route additional headers', async t => {
   const expectedHeaders = {
     'x-my-header': '42',
-    'user-agent': 'lightMyRequest'
+    'user-agent': 'lightMyRequest',
+    host: 'host'
   }
 
   const res = await t.app.inject({
     method: 'GET',
     url: '/api/headers',
-    headers: { 'x-my-header': '42' }
+    headers: {
+      'x-my-header': '42',
+      host: 'host'
+    },
   })
 
   assert.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   assert.equal(res.statusCode, 200)
   const headers = res.json()
-  delete headers.host
   assert.deepEqual(headers, expectedHeaders)
   assert.deepEqual(await lastLogItem(t.app.mongo.db), expectedHeaders)
 })
 
 test('GET `/api/headers?delay=1` route', async t => {
   const expectedHeaders = {
-    'user-agent': 'lightMyRequest'
+    'user-agent': 'lightMyRequest',
+    host: 'host'
   }
 
   const res = await t.app.inject({
     method: 'GET',
-    url: '/api/headers'
+    url: '/api/headers',
+    headers: {
+      host: 'host'
+    }
   })
 
   assert.equal(res.headers['content-type'], 'application/json; charset=utf-8')
   assert.equal(res.statusCode, 200)
   const headers = res.json()
-  delete headers.host
   assert.deepEqual(headers, expectedHeaders)
   assert.deepEqual(await lastLogItem(t.app.mongo.db), expectedHeaders)
 })
