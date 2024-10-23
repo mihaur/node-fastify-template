@@ -16,6 +16,7 @@ export default async function routes (fastify, options) {
   })
 
   fastify.get('/:response', {
+    schema,
     handler: async (request, reply) => {
       const response = { ping: request.params.response }
       await logAccess(response, fastify.mongo.db.collection('access-log'))
