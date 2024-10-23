@@ -47,7 +47,7 @@ test('GET `/api/headers` route additional headers', async t => {
     headers: {
       'x-my-header': '42',
       host: 'host'
-    },
+    }
   })
 
   assert.equal(res.headers['content-type'], 'application/json; charset=utf-8')
