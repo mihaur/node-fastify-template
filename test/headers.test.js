@@ -1,5 +1,5 @@
 import { test, beforeEach, afterEach } from 'node:test'
-import { strict as assert } from 'node:assert'
+import assert from 'node:assert/strict'
 import { buildFastify, getLastLogItem } from './helper.js'
 
 const lastLogItem = getLastLogItem('headers')
