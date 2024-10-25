@@ -20,7 +20,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Cache node modules
         uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a
         env:
@@ -55,7 +55,7 @@ jobs:
           CI: true
           MONGODB_URI: mongodb://localhost:27017/test-db # use mongoDB docker
       - name: Coveralls Parallel
-        uses: coverallsapp/github-action@4cdef0b2dbe0c9aa26bed48edb868db738625e79
+        uses: coverallsapp/github-action@cfd0633edbd2411b532b808ba7a8b5e04f76d2c8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: run-${{ matrix.os }}-${{ matrix.node-version }}
@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Coveralls Finished
-        uses: coverallsapp/github-action@4cdef0b2dbe0c9aa26bed48edb868db738625e79
+        uses: coverallsapp/github-action@cfd0633edbd2411b532b808ba7a8b5e04f76d2c8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
