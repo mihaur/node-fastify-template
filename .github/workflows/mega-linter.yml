@@ -107,68 +107,68 @@ jobs:
             megalinter-reports
             mega-linter.log
 
-      # Set APPLY_FIXES_IF var for use in future steps
-      - name: Set APPLY_FIXES_IF var
-        run: |
-          printf 'APPLY_FIXES_IF=%s\n' "${{
-            steps.ml.outputs.has_updated_sources == 1 &&
-            (
-              env.APPLY_FIXES_EVENT == 'all' ||
-              env.APPLY_FIXES_EVENT == github.event_name
-            ) &&
-            (
-              github.event_name == 'push' ||
-              github.event.pull_request.head.repo.full_name == github.repository
-            )
-          }}" >> "${GITHUB_ENV}"
+      # # Set APPLY_FIXES_IF var for use in future steps
+      # - name: Set APPLY_FIXES_IF var
+      #   run: |
+      #     printf 'APPLY_FIXES_IF=%s\n' "${{
+      #       steps.ml.outputs.has_updated_sources == 1 &&
+      #       (
+      #         env.APPLY_FIXES_EVENT == 'all' ||
+      #         env.APPLY_FIXES_EVENT == github.event_name
+      #       ) &&
+      #       (
+      #         github.event_name == 'push' ||
+      #         github.event.pull_request.head.repo.full_name == github.repository
+      #       )
+      #     }}" >> "${GITHUB_ENV}"
 
-      # Set APPLY_FIXES_IF_* vars for use in future steps
-      - name: Set APPLY_FIXES_IF_* vars
-        run: |
-          printf 'APPLY_FIXES_IF_PR=%s\n' "${{
-            env.APPLY_FIXES_IF == 'true' &&
-            env.APPLY_FIXES_MODE == 'pull_request'
-          }}" >> "${GITHUB_ENV}"
-          printf 'APPLY_FIXES_IF_COMMIT=%s\n' "${{
-            env.APPLY_FIXES_IF == 'true' &&
-            env.APPLY_FIXES_MODE == 'commit' &&
-            (!contains(fromJSON('["refs/heads/main", "refs/heads/master"]'), github.ref))
-          }}" >> "${GITHUB_ENV}"
+      # # Set APPLY_FIXES_IF_* vars for use in future steps
+      # - name: Set APPLY_FIXES_IF_* vars
+      #   run: |
+      #     printf 'APPLY_FIXES_IF_PR=%s\n' "${{
+      #       env.APPLY_FIXES_IF == 'true' &&
+      #       env.APPLY_FIXES_MODE == 'pull_request'
+      #     }}" >> "${GITHUB_ENV}"
+      #     printf 'APPLY_FIXES_IF_COMMIT=%s\n' "${{
+      #       env.APPLY_FIXES_IF == 'true' &&
+      #       env.APPLY_FIXES_MODE == 'commit' &&
+      #       (!contains(fromJSON('["refs/heads/main", "refs/heads/master"]'), github.ref))
+      #     }}" >> "${GITHUB_ENV}"
 
-      # Create pull request if applicable
-      # (for now works only on PR from same repository, not from forks)
-      - name: Create Pull Request with applied fixes
-        uses: peter-evans/create-pull-request@5e914681df9dc83aa4e4905692ca88beb2f9e91f
-        id: cpr
-        if: env.APPLY_FIXES_IF_PR == 'true'
-        with:
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
-          commit-message: "[MegaLinter] Apply linters automatic fixes"
-          title: "[MegaLinter] Apply linters automatic fixes"
-          labels: bot
+      # # Create pull request if applicable
+      # # (for now works only on PR from same repository, not from forks)
+      # - name: Create Pull Request with applied fixes
+      #   uses: peter-evans/create-pull-request@5e914681df9dc83aa4e4905692ca88beb2f9e91f
+      #   id: cpr
+      #   if: env.APPLY_FIXES_IF_PR == 'true'
+      #   with:
+      #     token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+      #     commit-message: "[MegaLinter] Apply linters automatic fixes"
+      #     title: "[MegaLinter] Apply linters automatic fixes"
+      #     labels: bot
 
-      - name: Create PR output
-        if: env.APPLY_FIXES_IF_PR == 'true'
-        run: |
-          echo "PR Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "PR URL - ${{ steps.cpr.outputs.pull-request-url }}"
+      # - name: Create PR output
+      #   if: env.APPLY_FIXES_IF_PR == 'true'
+      #   run: |
+      #     echo "PR Number - ${{ steps.cpr.outputs.pull-request-number }}"
+      #     echo "PR URL - ${{ steps.cpr.outputs.pull-request-url }}"
 
-      # Push new commit if applicable
-      # (for now works only on PR from same repository, not from forks)
-      - name: Prepare commit
-        if: env.APPLY_FIXES_IF_COMMIT == 'true'
-        run: sudo chown -Rc $UID .git/
+      # # Push new commit if applicable
+      # # (for now works only on PR from same repository, not from forks)
+      # - name: Prepare commit
+      #   if: env.APPLY_FIXES_IF_COMMIT == 'true'
+      #   run: sudo chown -Rc $UID .git/
 
-      - name: Commit and push applied linter fixes
-        uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842
-        if: env.APPLY_FIXES_IF_COMMIT == 'true'
-        with:
-          branch: >-
-            ${{
-              github.event.pull_request.head.ref ||
-              github.head_ref ||
-              github.ref
-            }}
-          commit_message: "[MegaLinter] Apply linters fixes"
-          commit_user_name: megalinter-bot
-          commit_user_email: nicolas.vuillamy@ox.security
+      # - name: Commit and push applied linter fixes
+      #   uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842
+      #   if: env.APPLY_FIXES_IF_COMMIT == 'true'
+      #   with:
+      #     branch: >-
+      #       ${{
+      #         github.event.pull_request.head.ref ||
+      #         github.head_ref ||
+      #         github.ref
+      #       }}
+      #     commit_message: "[MegaLinter] Apply linters fixes"
+      #     commit_user_name: megalinter-bot
+      #     commit_user_email: nicolas.vuillamy@ox.security
