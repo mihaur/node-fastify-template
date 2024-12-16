@@ -16,7 +16,7 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
 * linting and fixing using [neostandard][neostandard-url]
 * git pre-commit hooks using [husky][husky-url]
 * integration tests with [node test runner][node-test-url]
-* coverage report using native node coverage
+* coverage report using [native node coverage][node-coverage-url]
 * continuous integration using [GitHub Actions CI][github-actions-url]
   * code coverage tracking using [coveralls][coveralls-url]
   * dependency updates notifications using [dependabot][dependabot-url]
@@ -49,13 +49,17 @@ Use .env to store your environment dependant configuration options and secrets. 
 
 Linting is done using [neostandard][neostandard-url]. Use `npm run lint` to run linter. You can also automatically fix linter errors by running `npm run lint:fix`.
 
+### Unit tests
+
+Unit tests are located in src/*component*/__test/*component*.test.js. Unit tests are executed by [Node test runner][node-test-url] using `npm run test:unit`.
+
 ### Integration tests
 
-Integration tests are stored in test/**.spec.js. Tests are run by [Node test runner][node-test-url]. Run `npm run test` to run both unit and integration tests.
+Integration tests are located in test/**.test.js. Integration tests are executed by [Node test runner][node-test-url] using `npm run test`.
 
 #### Coverage reports
 
-Run `npm run coverage` to generate HTML test coverage report. Web browser is opened after tests are run.
+Uae `npm run coverage` to show coverage in the console or `npm run coverage:lcov` to generate a lcov report.
 
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
 [conventional-commits-url]: https://conventionalcommits.org/
@@ -76,6 +80,7 @@ Run `npm run coverage` to generate HTML test coverage report. Web browser is ope
 [husky-url]: https://typicode.github.io/husky
 [mongodb-uri]: https://www.mongodb.com/
 [node-test-url]: https://nodejs.org/api/test.html
+[node-coverage-url]: https://nodejs.org/docs/latest/api/test.html#collecting-code-coverage
 [node-url]: https://nodejs.org/en/
 [npm-url]: https://www.npmjs.com/
 [release-drafter-url]: https://github.com/marketplace/actions/release-drafter
