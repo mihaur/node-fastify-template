@@ -6,7 +6,7 @@
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 [![MegaLinter](https://github.com/mihaur/node-fastify-template/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/mihaur/node-fastify-template/actions?query=workflow%3AMegaLinter+branch%3Amain)
 
-Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling and native node test runner with native coverage. Can be used as a template to quickly bootstrap yor Node.js API http server project.
+Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mongodb-uri] as a database for persisting data, GitHub Actions build and code linter, minimal tooling and native node test runner with native coverage. Can be used as a template to quickly bootstrap your Node.js API http server project.
 
 ## All features
 
@@ -22,7 +22,7 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
   * dependency updates notifications using [dependabot][dependabot-url]
   * dependency merging using [GitHub Action Merge Dependabot][github-action-merge-dependabot]
   * authoring of release notes using [release-drafter][release-drafter-url]
-  * code linting with [MegaLinter][mega-litner-url]
+  * code linting with [MegaLinter][mega-linter-url]
 
 ## Getting Started
 
@@ -43,7 +43,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Configuring
 
-Use .env to store your environment dependant configuration options and secrets. This file should not be checked in to your repository, use .env.sample as example but exclude real secrets.
+Use .env to store your environment dependent configuration options and secrets. This file should not be checked in to your repository, use .env.example as an example but exclude real secrets.
 
 ### Linting and code fixing
 
@@ -59,7 +59,7 @@ Integration tests are located in test/**.test.js. Integration tests are executed
 
 #### Coverage reports
 
-Uae `npm run coverage` to show coverage in the console or `npm run coverage:lcov` to generate a lcov report.
+Use `npm run coverage` to show coverage in the console or `npm run coverage:lcov` to generate a lcov report.
 
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
 [conventional-commits-url]: https://conventionalcommits.org/
@@ -86,4 +86,4 @@ Uae `npm run coverage` to show coverage in the console or `npm run coverage:lcov
 [release-drafter-url]: https://github.com/marketplace/actions/release-drafter
 [neostandard-image]: https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat
 [neostandard-url]: https://github.com/neostandard/neostandard
-[mega-litner-url]: https://megalinter.github.io
+[mega-linter-url]: https://megalinter.github.io
