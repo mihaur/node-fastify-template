@@ -58,7 +58,7 @@ test('GET `/api/headers?delay=1` route', async t => {
 
   const res = await t.app.inject({
     method: 'GET',
-    url: '/api/headers'
+    url: '/api/headers?delay=1'
   })
 
   assert.equal(res.headers['content-type'], 'application/json; charset=utf-8')
