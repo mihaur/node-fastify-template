@@ -3,14 +3,15 @@ export const headersSchema = {
     type: 'object',
     properties: {
       delay: { type: 'integer' }
-    }
+    },
+    additionalProperties: false
   },
   response: {
     200: {
       type: 'object',
       properties: {
       },
-      additionalProperties: true
+      additionalProperties: { type: 'string' }
     }
   }
 }
