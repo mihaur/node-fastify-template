@@ -45,6 +45,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 Use .env to store your environment-dependent configuration options and secrets; this file should not be checked into your repository. Use .env.example as an example but exclude real secrets.
 
+The server accepts two environment variables:
+
+* `FASTIFY_PORT` &ndash; listening port. It defaults to `3000` and must be an integer.
+* `MONGODB_URI` &ndash; MongoDB connection string. This variable is required and must not be empty.
+
 ### Linting and code fixing
 
 Linting is done using [neostandard][neostandard-url]. Use `npm run lint` to run linter. You can also automatically fix linter errors by running `npm run lint:fix`.

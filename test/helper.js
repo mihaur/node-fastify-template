@@ -1,6 +1,10 @@
 import Fastify from 'fastify'
 import app from '../src/app.js'
 
+if (!process.env.MONGODB_URI) {
+  process.env.MONGODB_URI = 'mongodb://localhost:27017/test-db'
+}
+
 export async function buildFastify (opts = {}) {
   const fastify = await app(Fastify(), opts)
   await fastify.ready()

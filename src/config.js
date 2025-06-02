@@ -5,12 +5,12 @@ export const config = {
     required: ['MONGODB_URI'],
     properties: {
       FASTIFY_PORT: {
-        type: 'string',
+        type: 'integer',
         default: 3000
       },
       MONGODB_URI: {
         type: 'string',
-        default: ''
+        minLength: 1
       }
     }
   }
