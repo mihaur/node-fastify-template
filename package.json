@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "fastify start --log-level info --pretty-logs --watch src/app.js",
-    "debug": "fastify start --debug --log-level info --log-level info --pretty-logs --watch src/app.js",
+    "debug": "fastify start --debug --log-level info --pretty-logs --watch src/app.js",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "test:unit": "node --test src/**/__test__/**/*.test.js",
