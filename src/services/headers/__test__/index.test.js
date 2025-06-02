@@ -4,7 +4,7 @@ import routes from '../index.js'
 import { createMockFastify, createMockReply, createMockRequest } from '../../__test__/helpers.js'
 
 /* jscpd:ignore-start */
-test('headers route returns request headers without host', async (t) => {
+test('headers route returns request headers without the host header', async (t) => {
   const mockFastify = createMockFastify()
   await routes(mockFastify)
 
