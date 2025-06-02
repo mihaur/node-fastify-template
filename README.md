@@ -12,21 +12,21 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
 
 * automatic reloading using [fastify-cli][fastify-cli-url]
 * native [ESM][esm-url] module ([ECMAScript][ecma-script-url]) with imports/exports
-* load .env to environment and validate using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
+* load .env into the environment and validate it using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
 * linting and fixing using [neostandard][neostandard-url]
 * git pre-commit hooks using [husky][husky-url]
 * integration tests with [node test runner][node-test-url]
 * coverage report using [native node coverage][node-coverage-url]
 * continuous integration using [GitHub Actions CI][github-actions-url]
   * code coverage tracking using [coveralls][coveralls-url]
-  * dependency updates notifications using [dependabot][dependabot-url]
+  * dependency update notifications using [dependabot][dependabot-url]
   * dependency merging using [GitHub Action Merge Dependabot][github-action-merge-dependabot]
   * authoring of release notes using [release-drafter][release-drafter-url]
   * code linting with [MegaLinter][mega-linter-url]
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will help you get a copy of the project up and running on your local machine for development and testing.
 
 ### Prerequisites
 
@@ -52,19 +52,19 @@ The server accepts two environment variables:
 
 ### Linting and code fixing
 
-Linting is done using [neostandard][neostandard-url]. Use `npm run lint` to run linter. You can also automatically fix linter errors by running `npm run lint:fix`.
+Linting is done using [neostandard][neostandard-url]. Use `npm run lint` to run the linter. You can also automatically fix linter errors by running `npm run lint:fix`.
 
 ### Unit tests
 
-Unit tests are located in src/*component*/__test/*component*.test.js. Unit tests are executed by [Node test runner][node-test-url] using `npm run test:unit`.
+Unit tests are located in src/*component*/__test/*component*.test.js. They are executed by the [Node test runner][node-test-url] using `npm run test:unit`.
 
 ### Integration tests
 
-Integration tests are located in test/**.test.js. Integration tests are executed by [Node test runner][node-test-url] using `npm run test`.
+Integration tests are located in test/**.test.js. They are executed by the [Node test runner][node-test-url] using `npm run test`.
 
 #### Coverage reports
 
-Use `npm run coverage` to show coverage in the console or `npm run coverage:lcov` to generate a lcov report.
+Use `npm run coverage` to show coverage in the console, or `npm run coverage:lcov` to generate an lcov report.
 
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
 [conventional-commits-url]: https://conventionalcommits.org/

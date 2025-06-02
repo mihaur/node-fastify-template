@@ -10,7 +10,7 @@ const mockMongo = {
   }
 }
 
-// Create mock Fastify instance with route handlers storage
+// Create a mock Fastify instance to store route handlers
 export function createMockFastify () {
   return {
     routes: {},

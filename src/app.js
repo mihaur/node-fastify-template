@@ -1,7 +1,7 @@
 import { config } from './config.js'
 
 export default async function (fastify, opts) {
-  // fastify-cli does not support loading dotenv with option
+  // fastify-cli does not support loading dotenv with an option
 
   await fastify.register(import('@fastify/env'), config)
   fastify.register(import('@fastify/mongodb'), {
