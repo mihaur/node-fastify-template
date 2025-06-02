@@ -92,3 +92,5 @@ Use `npm run coverage` to show coverage in the console or `npm run coverage:lcov
 [neostandard-image]: https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat
 [neostandard-url]: https://github.com/neostandard/neostandard
 [mega-linter-url]: https://megalinter.github.io
+
+
