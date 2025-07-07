@@ -16,6 +16,7 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
 * linting and fixing using [neostandard][neostandard-url]
 * git pre-commit hooks using [husky][husky-url]
 * integration tests with [node test runner][node-test-url]
+* API client [Bruno][bruno-url]
 * coverage report using [native node coverage][node-coverage-url]
 * continuous integration using [GitHub Actions CI][github-actions-url]
   * code coverage tracking using [coveralls][coveralls-url]
@@ -62,10 +63,15 @@ Unit tests are located in src/*component*/__test/*component*.test.js. They are e
 
 Integration tests are located in test/**.test.js. They are executed by the [Node test runner][node-test-url] using `npm run test`.
 
+### API client test
+
+[Bruno][bruno-url] serves as the API client testing tool, with its configuration stored in the `bruno/` directory. Run the server in a separate terminal and execute API client tests, use the command `npm run bruno` to run all tests, or `npm run bruno -- ping` to run just ping collection.
+
 #### Coverage reports
 
 Use `npm run coverage` to show coverage in the console, or `npm run coverage:lcov` to generate an lcov report.
 
+[bruno-url]: https://www.usebruno.com/
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
 [conventional-commits-url]: https://conventionalcommits.org/
 [coveralls-url]: https://coveralls.io/
@@ -83,14 +89,12 @@ Use `npm run coverage` to show coverage in the console, or `npm run coverage:lco
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
 [github-actions-url]: https://github.com/features/actions
 [husky-url]: https://typicode.github.io/husky
-[mongodb-uri]: https://www.mongodb.com/
+[neostandard-url]: https://github.com/neostandard/neostandard
+[neostandard-image]: https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat
 [node-test-url]: https://nodejs.org/api/test.html
 [node-coverage-url]: https://nodejs.org/docs/latest/api/test.html#collecting-code-coverage
 [node-url]: https://nodejs.org/en/
 [npm-url]: https://www.npmjs.com/
-[release-drafter-url]: https://github.com/marketplace/actions/release-drafter
-[neostandard-image]: https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat
-[neostandard-url]: https://github.com/neostandard/neostandard
 [mega-linter-url]: https://megalinter.github.io
-
-
+[mongodb-uri]: https://www.mongodb.com/
+[release-drafter-url]: https://github.com/marketplace/actions/release-drafter

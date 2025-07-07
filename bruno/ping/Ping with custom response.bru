@@ -1,0 +1,22 @@
+meta {
+  name: Ping with custom response
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/ping/:response
+  body: none
+  auth: none
+}
+
+params:path {
+  response: pong
+}
+
+assert {
+  res.body: isJson
+  res.status: eq 200
+  res.body.ping: eq pong
+}
+

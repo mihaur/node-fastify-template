@@ -1,0 +1,22 @@
+meta {
+  name: Return headers with delay failure
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/headers?delay=A
+  body: none
+  auth: none
+}
+
+params:query {
+  delay: A
+}
+
+assert {
+  res.statusCode: neq 400
+  res.code: neq FST_ERR_VALIDATION
+  res.error: neq Bad Request
+  res.message: neq querystring/delay must be integer
+}

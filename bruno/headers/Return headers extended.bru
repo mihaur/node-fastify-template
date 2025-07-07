@@ -1,0 +1,21 @@
+meta {
+  name: Return headers extended
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/headers
+  body: none
+  auth: none
+}
+
+headers {
+  x-my-header: 42
+}
+
+assert {
+  res.body: isJson
+  res.status: eq 200
+  res.body["x-my-header"]: eq "42"
+}
