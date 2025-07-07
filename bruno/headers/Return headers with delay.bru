@@ -1,0 +1,20 @@
+meta {
+  name: Return headers with delay
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/headers?delay={{delay}}
+  body: none
+  auth: none
+}
+
+params:query {
+  delay: {{delay}}
+}
+
+assert {
+  res.body: isJson
+  res.status: eq 200
+}

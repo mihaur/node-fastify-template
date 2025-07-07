@@ -1,0 +1,21 @@
+meta {
+  name: Ping with delay
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/ping?delay={{delay}}
+  body: none
+  auth: none
+}
+
+params:query {
+  delay: {{delay}}
+}
+
+assert {
+  res.body: isJson
+  res.status: eq 200
+  res.body.ping: eq pong
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Return headers
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/headers
+  body: none
+  auth: none
+}
+
+assert {
+  res.body: isJson
+  res.status: eq 200
+}
