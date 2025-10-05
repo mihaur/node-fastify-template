@@ -12,6 +12,7 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
 
 * automatic reloading using [fastify-cli][fastify-cli-url]
 * native [ESM][esm-url] module ([ECMAScript][ecma-script-url]) with imports/exports
+* automatically generated swagger API documentation from models using [fastify-swagger][fastify-swagger-url] and[fastify-swagger-ui][fastify-swagger-ui-url]
 * load .env into the environment and validate it using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
 * linting and fixing using [neostandard][neostandard-url]
 * git pre-commit hooks using [husky][husky-url]
@@ -51,6 +52,12 @@ The server accepts two environment variables:
 * `FASTIFY_PORT` &ndash; listening port. It defaults to `3000` and must be an integer.
 * `MONGODB_URI` &ndash; MongoDB connection string. This variable is required and must not be empty.
 
+### API documentation
+
+The application exposes interactive API documentation using Swagger UI.
+
+Once the server is running, visit: <http://localhost:3000/api/docs>
+
 ### Linting and code fixing
 
 Linting is done using [neostandard][neostandard-url]. Use `npm run lint` to run the linter. You can also automatically fix linter errors by running `npm run lint:fix`.
@@ -83,7 +90,9 @@ Use `npm run coverage` to show coverage in the console, or `npm run coverage:lco
 [esm-url]: https://nodejs.org/api/esm.html#esm_modules_ecmascript_modules
 [fastify-cli-url]: https://github.com/fastify/fastify-cli
 [fastify-env-url]: https://github.com/fastify/fastify-env
-[fastify-site-url]: https://www.fastify.io/
+[fastify-site-url]: https://fastify.dev/
+[fastify-swagger-url]: https://github.com/fastify/fastify-swagger
+[fastify-swagger-ui-url]: https://github.com/fastify/fastify-swagger-ui
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-merge-dependabot]: https://github.com/marketplace/actions/github-action-merge-dependabot
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
