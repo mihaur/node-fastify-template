@@ -1,8 +1,18 @@
 export const pingSchema = {
+  description: 'Ping schema',
+  tags: ['ping'],
+  summary: 'Ping the service with possible delay',
   querystring: {
     type: 'object',
     properties: {
       delay: { type: 'integer' }
+    },
+    additionalProperties: false
+  },
+  params: {
+    type: 'object',
+    properties: {
+      response: { type: 'string' }
     },
     additionalProperties: false
   },
