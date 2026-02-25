@@ -1,5 +1,5 @@
 # Project Guidelines
-
+- Keep the order of dependencies and devDepencies
 - Use Node.js 22 or later.
 - Lint with `npm run lint`; auto-fix with `npm run lint:fix`.
 - Run the full test suite using `npm test` (runs lint, unit, integration tests, and coverage).

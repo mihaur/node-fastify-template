@@ -17,8 +17,8 @@
     "DEVSKIM",
     "fastify",
     "mihaur",
-    "neostandard",
     "nosemgrep",
+    "stylistic",
     "TRIVY"
   ],
   "version": "0.2"

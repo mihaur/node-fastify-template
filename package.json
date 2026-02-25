@@ -6,7 +6,7 @@
   "exports": "./src/app.js",
   "type": "module",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22.13.0"
   },
   "scripts": {
     "start": "fastify start --log-level info --pretty-logs --watch src/app.js",
@@ -40,9 +40,11 @@
   "author": "Miha Urbanija <miha.urbanija@gmail.com>",
   "license": "Apache-2.0 WITH LLVM-exception",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.9.0",
     "eslint": "^10.0.2",
     "husky": "^9.1.7",
-    "neostandard": "^0.12.2"
+    "globals": "^17.3.0"
   },
   "dependencies": {
     "fastify": "^5.7.4",

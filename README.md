@@ -1,6 +1,6 @@
 # Node.js API server based on fastify + MongoDB project template
 
-[![neostandard javascript style][neostandard-image]][neostandard-url]
+[![ESLint][eslint-image]][eslint-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
 ![GitHub Actions CI][github-action-nodejs-ci-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
@@ -14,7 +14,7 @@ Node.js API server/backend based on [fastify][fastify-site-url] and [MongoDB][mo
 * native [ESM][esm-url] module ([ECMAScript][ecma-script-url]) with imports/exports
 * automatically generated swagger API documentation from models using [fastify-swagger][fastify-swagger-url] and[fastify-swagger-ui][fastify-swagger-ui-url]
 * load .env into the environment and validate it using [fastify-env][fastify-env-url] and [dotenv][dotenv-url]
-* linting and fixing using [neostandard][neostandard-url]
+* linting and fixing using [ESLint][eslint-url] with [@stylistic][stylistic-url]
 * git pre-commit hooks using [husky][husky-url]
 * integration tests with [node test runner][node-test-url]
 * API client [Bruno][bruno-url]
@@ -60,7 +60,7 @@ Once the server is running, visit: <http://localhost:3000/api/docs>
 
 ### Linting and code fixing
 
-Linting is done using [neostandard][neostandard-url]. Use `npm run lint` to run the linter. You can also automatically fix linter errors by running `npm run lint:fix`.
+Linting is done using [ESLint][eslint-url] with [@stylistic][stylistic-url]. Use `npm run lint` to run the linter. You can also automatically fix linter errors by running `npm run lint:fix`.
 
 ### Unit tests
 
@@ -98,8 +98,9 @@ Use `npm run coverage` to show coverage in the console, or `npm run coverage:lco
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-fastify-template/workflows/Node.JS%20CI/badge.svg
 [github-actions-url]: https://github.com/features/actions
 [husky-url]: https://typicode.github.io/husky
-[neostandard-url]: https://github.com/neostandard/neostandard
-[neostandard-image]: https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat
+[eslint-url]: https://eslint.org/
+[eslint-image]: https://img.shields.io/badge/code_style-ESLint-brightgreen?style=flat
+[stylistic-url]: https://eslint.style/
 [node-test-url]: https://nodejs.org/api/test.html
 [node-coverage-url]: https://nodejs.org/docs/latest/api/test.html#collecting-code-coverage
 [node-url]: https://nodejs.org/en/

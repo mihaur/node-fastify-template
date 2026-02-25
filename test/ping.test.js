@@ -5,11 +5,11 @@ import { buildFastify, getLastLogItem } from './helper.js'
 const lastLogItem = getLastLogItem('ping')
 
 /* jscpd:ignore-start */
-beforeEach(async (t) => {
+beforeEach(async t => {
   t.app = await buildFastify()
 })
 
-afterEach(async (t) => {
+afterEach(async t => {
   t.app.close()
 })
 

@@ -45,7 +45,7 @@ export default async function (fastify, opts) {
       preHandler: function (request, reply, next) { next() }
     },
     staticCSP: true,
-    transformStaticCSP: (header) => header
+    transformStaticCSP: header => header
   })
   await fastify.register(import('@fastify/mongodb'), {
     url: fastify.config.MONGODB_URI

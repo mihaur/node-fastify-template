@@ -4,7 +4,7 @@ import routes from '../index.js'
 import { createMockFastify, createMockReply, createMockRequest } from '../../__test__/helpers.js'
 
 /* jscpd:ignore-start */
-test('ping route handler returns pong', async (t) => {
+test('ping route handler returns pong', async t => {
   const mockFastify = createMockFastify()
   await routes(mockFastify)
 
@@ -17,7 +17,7 @@ test('ping route handler returns pong', async (t) => {
   assert.deepEqual(reply.payload, { ping: 'pong' })
 })
 
-test('ping route with custom response', async (t) => {
+test('ping route with custom response', async t => {
   const mockFastify = createMockFastify()
   await routes(mockFastify)
 
@@ -32,7 +32,7 @@ test('ping route with custom response', async (t) => {
   assert.deepEqual(reply.payload, { ping: 'test' })
 })
 
-test('ping route with delay parameter', async (t) => {
+test('ping route with delay parameter', async t => {
   const mockFastify = createMockFastify()
   await routes(mockFastify)
 

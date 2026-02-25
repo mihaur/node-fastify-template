@@ -18,8 +18,8 @@ DISABLE_ERRORS_LINTERS:
 # FILTER_REGEX_EXCLUDE: '(bru)' # files in .gitignore are already filtered by default
 LOG_LEVEL: DEBUG # INFO # DEBUG
 SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (package-lock\.json)
-# this repo uses neostandard
-JAVASCRIPT_STANDARD_CLI_EXECUTABLE: ["npm", "run", "lint"]
+# this repo uses ESLint
+JAVASCRIPT_ESLINT_CLI_EXECUTABLE: ["npm", "run", "lint"]
 SPELL_LYCHEE_ARGUMENTS:
   ["--exclude-loopback", "--accept", "100..=103,200..=299,403"]
 REPOSITORY_CHECKOV_ARGUMENTS:

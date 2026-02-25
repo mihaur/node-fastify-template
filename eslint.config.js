@@ -1,20 +1,26 @@
-import neostandard from 'neostandard'
-
-// TODO: does not work in current setup
-// export default neostandard({ languageOptions: { ecmaVersion: 2025 } })
-
-const ns = neostandard({})
-for (const item of ns) {
-  if (item?.languageOptions?.ecmaVersion < 2025) {
-    item.languageOptions.ecmaVersion = 2025
-  }
-}
+import js from '@eslint/js'
+import stylistic from '@stylistic/eslint-plugin'
+import globals from 'globals'
 
 export default [
-  ...ns,
+  js.configs.recommended,
+  stylistic.configs.recommended,
   {
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      }
+    },
     rules: {
-      'comma-dangle': ['error', 'only-multiline'],
+      'no-unused-vars': ['error', {
+        args: 'none',
+        caughtErrors: 'none',
+        ignoreRestSiblings: true,
+        vars: 'all',
+      }],
+      '@stylistic/comma-dangle': ['error', 'only-multiline'],
+      '@stylistic/space-before-function-paren': ['error', 'always'],
+      '@stylistic/arrow-parens': ['error', 'as-needed'],
     }
   }
 ]
