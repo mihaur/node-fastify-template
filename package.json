@@ -50,6 +50,6 @@
     "@fastify/env": "^7.0.0",
     "@fastify/mongodb": "^10.0.0",
     "@fastify/swagger": "^9.8.1",
-    "@fastify/swagger-ui": "^6.1.0"
+    "@fastify/swagger-ui": "^6.1.1"
   }
 }
