@@ -42,7 +42,7 @@
   "devDependencies": {
     "eslint": "^9.39.2",
     "husky": "^9.1.7",
-    "neostandard": "^0.13.0"
+    "neostandard": "^0.14.0"
   },
   "dependencies": {
     "fastify": "^5.12.5",
